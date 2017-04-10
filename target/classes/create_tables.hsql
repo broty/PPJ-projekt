@@ -18,67 +18,67 @@ CREATE SCHEMA IF NOT EXISTS `ppjprojekt` DEFAULT CHARACTER SET utf8 ;
 USE `ppjprojekt` ;
 
 -- -----------------------------------------------------
--- Table `ppjprojekt`.`autor`
+-- Table `ppjprojekt`.`user`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ppjprojekt`.`autor` ;
+DROP TABLE IF EXISTS `ppjprojekt`.`user` ;
 
-CREATE TABLE IF NOT EXISTS `ppjprojekt`.`autor` (
-  `idautor` INT NOT NULL AUTO_INCREMENT,
-  `jmeno` VARCHAR(45) NULL,
-  `datum_registrace` DATETIME NULL,
-  PRIMARY KEY (`idautor`))
+CREATE TABLE IF NOT EXISTS `ppjprojekt`.`user` (
+  `iduser` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `date_creation` DATETIME NULL,
+  PRIMARY KEY (`iduser`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ppjprojekt`.`obrazek`
+-- Table `ppjprojekt`.`image`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ppjprojekt`.`obrazek` ;
+DROP TABLE IF EXISTS `ppjprojekt`.`image` ;
 
-CREATE TABLE IF NOT EXISTS `ppjprojekt`.`obrazek` (
-  `idobrazek` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `ppjprojekt`.`image` (
+  `idimage` INT NOT NULL AUTO_INCREMENT,
   `url` VARCHAR(45) NULL,
-  `nazev` VARCHAR(45) NULL,
+  `name` VARCHAR(45) NULL,
   `Datum_vytvoreni` DATETIME NULL,
-  `datum_aktualizace` DATETIME NULL,
+  `date_edit` DATETIME NULL,
   `likes` INT NULL,
-  `dislike` INT NULL,
-  `autor_idautor` INT NOT NULL,
-  PRIMARY KEY (`idobrazek`),
-  INDEX `fk_obrazek_autor1_idx` (`autor_idautor` ASC),
+  `dislikes` INT NULL,
+  `user_iduser` INT NOT NULL,
+  PRIMARY KEY (`idimage`),
+  INDEX `fk_obrazek_autor1_idx` (`user_iduser` ASC),
   CONSTRAINT `fk_obrazek_autor1`
-    FOREIGN KEY (`autor_idautor`)
-    REFERENCES `ppjprojekt`.`autor` (`idautor`)
+    FOREIGN KEY (`user_iduser`)
+    REFERENCES `ppjprojekt`.`user` (`iduser`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ppjprojekt`.`komentar`
+-- Table `ppjprojekt`.`comment`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ppjprojekt`.`komentar` ;
+DROP TABLE IF EXISTS `ppjprojekt`.`comment` ;
 
-CREATE TABLE IF NOT EXISTS `ppjprojekt`.`komentar` (
-  `idkomentar` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `ppjprojekt`.`comment` (
+  `idcomment` INT NOT NULL AUTO_INCREMENT,
   `text` VARCHAR(250) NULL,
-  `datum_vytvoreni` DATETIME NULL,
-  `datum_edit` DATETIME NULL,
+  `date_creation` DATETIME NULL,
+  `date_edit` DATETIME NULL,
   `likes` INT NULL,
-  `dislike` INT NULL,
-  `obrazek_idobrazek` INT NOT NULL,
-  `autor_idautor` INT NOT NULL,
-  PRIMARY KEY (`idkomentar`),
-  INDEX `fk_komentar_obrazek1_idx` (`obrazek_idobrazek` ASC),
-  INDEX `fk_komentar_autor1_idx` (`autor_idautor` ASC),
+  `dislikes` INT NULL,
+  `image_idimage` INT NOT NULL,
+  `user_iduser` INT NOT NULL,
+  PRIMARY KEY (`idcomment`),
+  INDEX `fk_komentar_obrazek1_idx` (`image_idimage` ASC),
+  INDEX `fk_komentar_autor1_idx` (`user_iduser` ASC),
   CONSTRAINT `fk_komentar_obrazek1`
-    FOREIGN KEY (`obrazek_idobrazek`)
-    REFERENCES `ppjprojekt`.`obrazek` (`idobrazek`)
+    FOREIGN KEY (`image_idimage`)
+    REFERENCES `ppjprojekt`.`image` (`idimage`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_komentar_autor1`
-    FOREIGN KEY (`autor_idautor`)
-    REFERENCES `ppjprojekt`.`autor` (`idautor`)
+    FOREIGN KEY (`user_iduser`)
+    REFERENCES `ppjprojekt`.`user` (`iduser`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -103,10 +103,10 @@ DROP TABLE IF EXISTS `ppjprojekt`.`tag_has_obrazek` ;
 
 CREATE TABLE IF NOT EXISTS `ppjprojekt`.`tag_has_obrazek` (
   `tag_idtag` INT NOT NULL,
-  `obrazek_idobrazek` INT NOT NULL,
+  `image_idimage` INT NOT NULL,
   `obrazek_autor_idautor` INT NOT NULL,
-  PRIMARY KEY (`tag_idtag`, `obrazek_idobrazek`, `obrazek_autor_idautor`),
-  INDEX `fk_tag_has_obrazek_obrazek1_idx` (`obrazek_idobrazek` ASC, `obrazek_autor_idautor` ASC),
+  PRIMARY KEY (`tag_idtag`, `image_idimage`, `obrazek_autor_idautor`),
+  INDEX `fk_tag_has_obrazek_obrazek1_idx` (`image_idimage` ASC, `obrazek_autor_idautor` ASC),
   INDEX `fk_tag_has_obrazek_tag1_idx` (`tag_idtag` ASC),
   CONSTRAINT `fk_tag_has_obrazek_tag1`
     FOREIGN KEY (`tag_idtag`)
@@ -114,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `ppjprojekt`.`tag_has_obrazek` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_tag_has_obrazek_obrazek1`
-    FOREIGN KEY (`obrazek_idobrazek`)
-    REFERENCES `ppjprojekt`.`obrazek` (`idobrazek`)
+    FOREIGN KEY (`image_idimage`)
+    REFERENCES `ppjprojekt`.`image` (`idimage`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

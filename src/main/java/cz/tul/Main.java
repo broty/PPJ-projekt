@@ -8,15 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 
-import java.util.List;
-
 @SpringBootApplication
 public class Main {
-
-    @Bean
-    public OffersDao offersDao() {
-        return new OffersDao();
-    }
 
     @Bean
     public UsersDao usersDao() {
@@ -24,18 +17,13 @@ public class Main {
     }
 
     @Bean
-    public AutorsDao autorsDao() {
-        return new AutorsDao();
+    public CommentsDao KomentarsDao() {
+        return new CommentsDao();
     }
 
     @Bean
-    public KomentarsDao KomentarsDao() {
-        return new KomentarsDao();
-    }
-
-    @Bean
-    public ObrazeksDao obrazeksDao() {
-        return new ObrazeksDao();
+    public ImagesDao imagesDao() {
+        return new ImagesDao();
     }
 
     @Profile({"devel", "test"})
@@ -48,13 +36,13 @@ public class Main {
 
         SpringApplication app = new SpringApplication(Main.class);
         ApplicationContext ctx = app.run(args);
-
+/*
         UsersDao usersDao = ctx.getBean(UsersDao.class);
-        AutorsDao autorsDao = ctx.getBean(AutorsDao.class);
+        UsersDao autorsDao = ctx.getBean(UsersDao.class);
 
         List<User> users = usersDao.getAllUsers();
         System.out.println(users);
-
+*/
     }
 
 }

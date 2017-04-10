@@ -1,5 +1,9 @@
 package cz.tul.data;
 
+/**
+ * Created by Martin on 03.04.2017.
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -7,6 +11,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 
 public class UsersDao {
 
@@ -18,27 +23,26 @@ public class UsersDao {
 
         MapSqlParameterSource params = new MapSqlParameterSource();
 
-        params.addValue("username", user.getUsername());
-        params.addValue("password", user.getPassword());
-        params.addValue("email", user.getEmail());
-        params.addValue("name", user.getName());
-        params.addValue("enabled", user.isEnabled());
-        params.addValue("authority", user.getAuthority());
+        java.text.SimpleDateFormat sdf =
+                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        return jdbc.update("insert into users (username, name, password, email, enabled, authority) values (:username, :name, :password, :email, :enabled, :authority)", params) == 1;
+        params.addValue("date_creation", sdf.format(user.getDate_creation()));
+        params.addValue("name", user.getName());
+
+        return jdbc.update("insert into user (iduser, date_creation, name) values (NULL, :date_creation, :name)", params) == 1;
     }
 
-    public boolean exists(String username) {
-        return jdbc.queryForObject("select count(*) from users where username=:username",
-                new MapSqlParameterSource("username", username), Integer.class) > 0;
+    public boolean exists(String name) {
+        return jdbc.queryForObject("select count(*) from user where name=:name",
+                new MapSqlParameterSource("name", name), Integer.class) > 0;
     }
 
     public List<User> getAllUsers() {
-        return jdbc.query("select * from users", BeanPropertyRowMapper.newInstance(User.class));
+        return jdbc.query("select * from user", BeanPropertyRowMapper.newInstance(User.class));
     }
 
     public void deleteUsers() {
-        jdbc.getJdbcOperations().execute("DELETE FROM OFFERS");
-        jdbc.getJdbcOperations().execute("DELETE FROM USERS");
+        jdbc.getJdbcOperations().execute("DELETE FROM users");
     }
 }
+

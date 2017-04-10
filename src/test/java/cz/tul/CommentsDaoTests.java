@@ -1,9 +1,7 @@
 package cz.tul;
 
-import cz.tul.data.Komentar;
-import cz.tul.data.KomentarsDao;
-import cz.tul.data.Obrazek;
-import cz.tul.data.ObrazeksDao;
+import cz.tul.data.Comment;
+import cz.tul.data.CommentsDao;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,18 +25,18 @@ import static org.junit.Assert.assertTrue;
 @ActiveProfiles({"default"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class KomentarsDaoTests {
+public class CommentsDaoTests {
     @Autowired
-    private KomentarsDao komentarsDao;
+    private CommentsDao commentsDao;
 
     @Test
     public void testKomentars() {
 
-        Komentar komentar = new Komentar("Komentář1", new Date(), new Date(), 0, 0, 1, 1);
+        Comment comment = new Comment("Komentář1", new Date(), new Date(), 0, 0, 1, 1);
 
-        assertTrue("Komentar creation should return true", komentarsDao.create(komentar));
+        assertTrue("Comment creation should return true", commentsDao.create(comment));
 
-        List<Komentar> komentars = komentarsDao.getAllKomentars();
+        List<Comment> comments = commentsDao.getAllComments();
 
     }
 }
