@@ -22,16 +22,22 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {Main.class})
-@ActiveProfiles({"default"})
+@ActiveProfiles({"devel"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
 public class UsersDaoTests {
     @Autowired
     private UsersDao usersDao;
 
+    private User user1 = new User(new Date(), "Bob");
+    private User user2 = new User(new Date(), "Igor");
+
     @Test
     public void testUsers() {
+        usersDao.create(user1);
+        usersDao.create(user2);
 
+/*
         User user = new User(new Date(), "Macho3");
 
         assertTrue("User creation should return true", usersDao.create(user));
@@ -45,6 +51,9 @@ public class UsersDaoTests {
         for(User a : users) {
             System.out.println(a.getName());
         }
+*/
+
+
 
     }
 }

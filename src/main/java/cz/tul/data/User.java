@@ -1,12 +1,21 @@
 package cz.tul.data;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by Martin on 03.04.2017.
  */
+
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "iduser")
     private int iduser;
+
     private Date date_creation;
     private String name;
 
@@ -14,6 +23,12 @@ public class User {
     }
 
     public User(Date date_creation, String name) {
+        this.date_creation = date_creation;
+        this.name = name;
+    }
+
+    public User(int iduser, Date date_creation, String name) {
+        this.iduser = iduser;
         this.date_creation = date_creation;
         this.name = name;
     }
