@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ce78fff-148e-4726-b3d5-654d7cb44163" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cz/tul/TagsDaoTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,9 +55,26 @@
       <file leaf-file-name="UsersDaoTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="737">
+              <caret line="68" column="1" lean-forward="false" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+              <folding>
+                <element signature="e#1221#1222#0" expanded="true" />
+                <element signature="e#1259#1260#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TagsDaoTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/TagsDaoTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="805">
+              <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1076#1077#0" expanded="true" />
+                <element signature="e#1112#1113#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,13 +84,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="70" />
-              <folding>
-                <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-                <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-                <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-                <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-                <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,27 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_tables.hsql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/create_tables.hsql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2108">
-              <caret line="124" column="37" lean-forward="false" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Comment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -116,11 +111,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application-devel.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-devel.properties">
+      <file leaf-file-name="CommentsDaoTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="1825">
+              <caret line="120" column="1" lean-forward="false" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImagesDaoTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="856">
+              <caret line="123" column="1" lean-forward="false" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -182,13 +189,11 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Komentar.java" />
         <option value="$PROJECT_DIR$/src/test/java/cz/tul/KomentarsDaoTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/KomentarsDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/ImagesDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application-devel.properties" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java" />
         <option value="$PROJECT_DIR$/src/test/resources/application-test.properties" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Image.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" />
@@ -196,6 +201,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/create_tables.hsql" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Comment.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/tul/TagsDaoTests.java" />
       </list>
     </option>
   </component>
@@ -261,9 +270,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -928,6 +937,7 @@
       <workItem from="1492367827145" duration="7881000" />
       <workItem from="1492519644925" duration="597000" />
       <workItem from="1492880487440" duration="39000" />
+      <workItem from="1492892775298" duration="107000" />
     </task>
     <servers />
   </component>
@@ -964,7 +974,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30489000" />
+    <option name="totallyTimeSpent" value="30596000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,7 +987,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -994,7 +1004,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29278728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29645476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1028,26 +1038,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/OffersDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,13 +1098,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,13 +1106,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,13 +1178,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,7 +1209,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#1221#1222#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1261,13 +1242,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-132">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1279,24 +1254,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/OffersDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="70" column="30" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1332,14 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1380,13 +1333,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="70" />
-          <folding>
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,6 +1359,47 @@
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1825">
+          <caret line="120" column="1" lean-forward="false" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="123" column="1" lean-forward="false" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="68" column="1" lean-forward="false" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+          <folding>
+            <element signature="e#1221#1222#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/TagsDaoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
           </folding>
         </state>
       </provider>
