@@ -1,19 +1,14 @@
 package cz.tul.data;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by Martin on 03.04.2017.
  */
 
-@Entity
-@Table(name = "users")
+
 public class User {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "iduser")
     private int iduser;
 
     private Date date_creation;

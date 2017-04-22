@@ -2,25 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ce78fff-148e-4726-b3d5-654d7cb44163" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cz/tul/TagsDaoTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lecture5_SpringJDBC/develdb.lck" afterPath="$PROJECT_DIR$/Lecture5_SpringJDBC/develdb.lck" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cz/tul/Main.class" afterPath="$PROJECT_DIR$/target/classes/cz/tul/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cz/tul/data/User.class" afterPath="$PROJECT_DIR$/target/classes/cz/tul/data/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cz/tul/data/UsersDao.class" afterPath="$PROJECT_DIR$/target/classes/cz/tul/data/UsersDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cz/tul/provisioning/Provisioner.class" afterPath="$PROJECT_DIR$/target/classes/cz/tul/provisioning/Provisioner.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/cz/tul/UsersDaoTests.class" afterPath="$PROJECT_DIR$/target/test-classes/cz/tul/UsersDaoTests.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot-jdbc-v2.iml" afterPath="$PROJECT_DIR$/spring-boot-jdbc-v2.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lecture5_SpringJDBC/develdb.properties" afterPath="$PROJECT_DIR$/Lecture5_SpringJDBC/develdb.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Lecture5_SpringJDBC/develdb.script" afterPath="$PROJECT_DIR$/Lecture5_SpringJDBC/develdb.script" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/Main.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/Comment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/Image.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/Image.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/ImagesDao.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/ImagesDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/Tag.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/Tag.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/TagsDao.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/TagsDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/provisioning/Provisioner.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/provisioning/Provisioner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-devel.properties" afterPath="$PROJECT_DIR$/src/main/resources/application-devel.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/create_tables.hsql" afterPath="$PROJECT_DIR$/src/main/resources/create_tables.hsql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java" afterPath="$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application-devel.properties" afterPath="$PROJECT_DIR$/target/classes/application-devel.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/create_tables.hsql" afterPath="$PROJECT_DIR$/target/classes/create_tables.hsql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/application-test.properties" afterPath="$PROJECT_DIR$/target/test-classes/application-test.properties" />
     </list>
@@ -41,32 +49,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Image.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Image.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            <state relative-caret-position="357">
+              <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,9 +61,12 @@
       <file leaf-file-name="UsersDaoTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="459">
+              <caret line="68" column="1" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="68" selection-end-column="1" />
+              <folding>
+                <element signature="e#1221#1222#0" expanded="true" />
+                <element signature="e#1259#1260#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,15 +74,40 @@
       <file leaf-file-name="UsersDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="70" />
+            <state relative-caret-position="529">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="41" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-                <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-                <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-                <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-                <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
+                <marker date="1492889562377" expanded="true" signature="911:980" ph="insert into user... " />
+                <marker date="1492889562377" expanded="true" signature="1080:1122" ph="select count... user" />
+                <marker date="1492889562377" expanded="true" signature="1425:1441" ph="DELETE FROM " />
+                <marker date="1492889562377" expanded="true" signature="1440:1441" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImagesDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/ImagesDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="125" column="5" lean-forward="true" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+              <folding>
+                <marker date="1492889897070" expanded="true" signature="1293:1305" ph="insert into obrazek... " />
+                <marker date="1492889897070" expanded="true" signature="1293:1475" ph="insert into image... " />
+                <marker date="1492889897070" expanded="true" signature="1829:1867" ph="select * fro... image" />
+                <marker date="1492889897070" expanded="true" signature="2011:2054" ph="select count... image" />
+                <marker date="1492889897070" expanded="true" signature="2275:2326" ph="UPDATE `imag... " />
+                <marker date="1492889897070" expanded="true" signature="2494:2551" ph="UPDATE `imag... " />
+                <marker date="1492889897070" expanded="true" signature="2772:2820" ph="select likes... image" />
+                <marker date="1492889897070" expanded="true" signature="3046:3097" ph="select disli... image" />
+                <marker date="1492889897070" expanded="true" signature="3549:3647" ph="UPDATE `imag... " />
+                <marker date="1492889897070" expanded="true" signature="4084:4180" ph="UPDATE `imag... " />
+                <marker date="1492889897070" expanded="true" signature="4395:4442" ph="select name image" />
+                <marker date="1492889897070" expanded="true" signature="4665:4711" ph="select url f... image" />
+                <marker date="1492889897070" expanded="true" signature="4939:4991" ph="select date_... image" />
+                <marker date="1492889897070" expanded="true" signature="4966:4991" ph="select datum... obrazek" />
+                <marker date="1492889897070" expanded="true" signature="5099:5116" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -104,18 +116,21 @@
       <file leaf-file-name="Tag.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Tag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <folding>
+                <element signature="e#185#186#0" expanded="true" />
+                <element signature="e#219#220#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <file leaf-file-name="CommentsDaoTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="342">
+              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,31 +139,59 @@
       <file leaf-file-name="create_tables.hsql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/create_tables.hsql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="124" column="37" lean-forward="false" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
+            <state relative-caret-position="317">
+              <caret line="51" column="39" lean-forward="false" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Comment.java">
+      <file leaf-file-name="TagsDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/TagsDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1492891856823" expanded="true" signature="771:810" ph="insert into tag... " />
+                <marker date="1492891856823" expanded="true" signature="1044:1059" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application-devel.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-devel.properties">
+      <file leaf-file-name="TagsDaoTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/TagsDaoTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="444">
+              <caret line="57" column="71" lean-forward="false" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1076#1077#0" expanded="true" />
+                <element signature="e#1112#1113#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentsDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1243">
+              <caret line="93" column="108" lean-forward="false" selection-start-line="93" selection-start-column="108" selection-end-line="93" selection-end-column="108" />
+              <folding>
+                <marker date="1492891066221" expanded="true" signature="1340:1352" ph="insert into komentar... " />
+                <marker date="1492891066221" expanded="true" signature="1340:1546" ph="insert into comment... " />
+                <marker date="1492891066221" expanded="true" signature="1859:1918" ph="UPDATE `comm... " />
+                <marker date="1492891066221" expanded="true" signature="2090:2155" ph="UPDATE `comm... " />
+                <marker date="1492891066221" expanded="true" signature="2383:2437" ph="select likes... comment" />
+                <marker date="1492891066221" expanded="true" signature="2669:2726" ph="select disli... comment" />
+                <marker date="1492891066221" expanded="true" signature="2957:3010" ph="select text comment" />
+                <marker date="1492891066221" expanded="true" signature="3473:3593" ph="UPDATE `comm... " />
+                <marker date="1492891066221" expanded="true" signature="3488:3593" ph="UPDATE `kome... " />
+                <marker date="1492891066221" expanded="true" signature="3818:3876" ph="select date_... comment" />
+                <marker date="1492891066221" expanded="true" signature="3986:4005" ph="DELETE FROM " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -198,8 +241,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Tag.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/TagsDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Autor.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/AutorsDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/cz/tul/AutorsDaoTests.java" />
@@ -209,20 +250,25 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Komentar.java" />
         <option value="$PROJECT_DIR$/src/test/java/cz/tul/KomentarsDaoTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/KomentarsDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/ImagesDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-devel.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/application-test.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Image.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/create_tables.hsql" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Comment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Image.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/application-test.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/provisioning/Provisioner.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-devel.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/create_tables.hsql" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/ImagesDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Tag.java" />
+        <option value="$PROJECT_DIR$/src/test/java/cz/tul/TagsDaoTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/TagsDao.java" />
       </list>
     </option>
   </component>
@@ -288,7 +334,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -424,12 +469,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="provisioning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-boot-jdbc-v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PPJ-projekt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -444,7 +520,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.UsersDaoTests">
+  <component name="RunManager" selected="JUnit.TagsDaoTests">
     <configuration default="false" name="UsersDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -509,6 +585,32 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="cz.tul" />
       <option name="MAIN_CLASS_NAME" value="cz.tul.CommentsDaoTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TagsDaoTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cz.tul.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="spring-boot-jdbc-v2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="cz.tul" />
+      <option name="MAIN_CLASS_NAME" value="cz.tul.TagsDaoTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -925,16 +1027,18 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JUnit.UsersDaoTests" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ImagesDaoTests" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.CommentsDaoTests" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TagsDaoTests" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.UsersDaoTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CommentsDaoTests" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ImagesDaoTests" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TagsDaoTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ImagesDaoTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UsersDaoTests" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CommentsDaoTests" />
       </list>
     </recent_temporary>
   </component>
@@ -953,43 +1057,44 @@
       <workItem from="1491761444108" duration="13449000" />
       <workItem from="1491835321095" duration="2164000" />
       <workItem from="1492367827145" duration="7286000" />
+      <workItem from="1492881309324" duration="10536000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 38m 38s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="ImagesDaoTests - 2017.04.22 at 21h 33m 08s.xml">
+      <configuration name="ImagesDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 40m 54s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="ImagesDaoTests - 2017.04.22 at 21h 34m 03s.xml">
+      <configuration name="ImagesDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 43m 31s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="ImagesDaoTests - 2017.04.22 at 21h 34m 41s.xml">
+      <configuration name="ImagesDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 45m 13s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="ImagesDaoTests - 2017.04.22 at 21h 38m 27s.xml">
+      <configuration name="ImagesDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 50m 08s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="ImagesDaoTests - 2017.04.22 at 21h 38m 43s.xml">
+      <configuration name="ImagesDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 52m 00s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="ImagesDaoTests - 2017.04.22 at 21h 39m 06s.xml">
+      <configuration name="ImagesDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 52m 36s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="ImagesDaoTests - 2017.04.22 at 21h 59m 04s.xml">
+      <configuration name="ImagesDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 54m 32s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="TagsDaoTests - 2017.04.22 at 22h 09m 54s.xml">
+      <configuration name="TagsDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 54m 59s.xml">
-      <configuration name="UsersDaoTests" configurationId="JUnit" />
+    <history-entry file="TagsDaoTests - 2017.04.22 at 22h 11m 09s.xml">
+      <configuration name="TagsDaoTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsersDaoTests - 2017.04.16 at 22h 58m 51s.xml">
+    <history-entry file="UsersDaoTests - 2017.04.22 at 21h 32m 54s.xml">
       <configuration name="UsersDaoTests" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29258000" />
+    <option name="totallyTimeSpent" value="39794000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1002,38 +1107,38 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.502445" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281075" sideWeight="0.49755502" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2383863" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281075" sideWeight="0.49755502" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32457212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1053,28 +1158,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/OffersDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="38" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="911:980" ph="insert into user... " />
+            <marker date="1492889562377" expanded="true" signature="1080:1122" ph="select count... user" />
+            <marker date="1492889562377" expanded="true" signature="1425:1441" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="1440:1441" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1084,20 +1177,21 @@
         <state relative-caret-position="1428">
           <caret line="92" column="5" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="92" selection-end-column="5" />
           <folding>
-            <marker date="1491836935061" expanded="true" signature="1293:1305" ph="insert into obrazek... " />
-            <marker date="1491836935061" expanded="true" signature="1293:1475" ph="insert into image... " />
-            <marker date="1491836935061" expanded="true" signature="1829:1867" ph="select * fro... image" />
-            <marker date="1491836935061" expanded="true" signature="2011:2054" ph="select count... image" />
-            <marker date="1491836935061" expanded="true" signature="2275:2330" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="2498:2559" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="2780:2828" ph="select likes... image" />
-            <marker date="1491836935061" expanded="true" signature="3054:3105" ph="select disli... image" />
-            <marker date="1491836935061" expanded="true" signature="3557:3659" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="4096:4196" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="4411:4458" ph="select name image" />
-            <marker date="1491836935061" expanded="true" signature="4681:4727" ph="select url f... image" />
-            <marker date="1491836935061" expanded="true" signature="4963:5015" ph="select date_... image" />
-            <marker date="1491836935061" expanded="true" signature="4990:5015" ph="select datum... obrazek" />
+            <marker date="1492889897070" expanded="true" signature="1293:1305" ph="insert into obrazek... " />
+            <marker date="1492889897070" expanded="true" signature="1293:1475" ph="insert into image... " />
+            <marker date="1492889897070" expanded="true" signature="1829:1867" ph="select * fro... image" />
+            <marker date="1492889897070" expanded="true" signature="2011:2054" ph="select count... image" />
+            <marker date="1492889897070" expanded="true" signature="2275:2326" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="2494:2551" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="2772:2820" ph="select likes... image" />
+            <marker date="1492889897070" expanded="true" signature="3046:3097" ph="select disli... image" />
+            <marker date="1492889897070" expanded="true" signature="3549:3647" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="4084:4180" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="4395:4442" ph="select name image" />
+            <marker date="1492889897070" expanded="true" signature="4665:4711" ph="select url f... image" />
+            <marker date="1492889897070" expanded="true" signature="4939:4991" ph="select date_... image" />
+            <marker date="1492889897070" expanded="true" signature="4966:4991" ph="select datum... obrazek" />
+            <marker date="1492889897070" expanded="true" signature="5099:5116" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1127,15 +1221,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1491837404075" expanded="true" signature="1340:1352" ph="insert into komentar... " />
-            <marker date="1491837404075" expanded="true" signature="1340:1546" ph="insert into comment... " />
-            <marker date="1491837404075" expanded="true" signature="1859:1918" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="2090:2155" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="2383:2437" ph="select likes... comment" />
-            <marker date="1491837404075" expanded="true" signature="2669:2726" ph="select disli... comment" />
-            <marker date="1491837404075" expanded="true" signature="3199:3319" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="3214:3319" ph="UPDATE `kome... " />
+            <marker date="1492891066221" expanded="true" signature="1340:1352" ph="insert into komentar... " />
+            <marker date="1492891066221" expanded="true" signature="1340:1546" ph="insert into comment... " />
+            <marker date="1492891066221" expanded="true" signature="1859:1918" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="2090:2155" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="2383:2437" ph="select likes... comment" />
+            <marker date="1492891066221" expanded="true" signature="2669:2726" ph="select disli... comment" />
+            <marker date="1492891066221" expanded="true" signature="2957:3010" ph="select text comment" />
+            <marker date="1492891066221" expanded="true" signature="3473:3593" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="3488:3593" ph="UPDATE `kome... " />
+            <marker date="1492891066221" expanded="true" signature="3818:3876" ph="select date_... comment" />
+            <marker date="1492891066221" expanded="true" signature="3986:4005" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1145,38 +1241,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <element signature="e#954#955#0" expanded="false" />
-            <element signature="e#986#987#0" expanded="false" />
-            <element signature="e#1033#1034#0" expanded="false" />
-            <element signature="e#1075#1076#0" expanded="false" />
-            <element signature="e#1106#1107#0" expanded="false" />
-            <element signature="e#1133#1134#0" expanded="false" />
-            <element signature="e#1173#1174#0" expanded="false" />
-            <element signature="e#1205#1206#0" expanded="false" />
-            <element signature="e#1243#1244#0" expanded="false" />
-            <element signature="e#1279#1280#0" expanded="false" />
-            <element signature="e#1335#1336#0" expanded="false" />
-            <element signature="e#1385#1386#0" expanded="false" />
-            <element signature="e#1419#1420#0" expanded="false" />
-            <element signature="e#1451#1452#0" expanded="false" />
-            <element signature="e#1499#1500#0" expanded="false" />
-            <element signature="e#1541#1542#0" expanded="false" />
-            <element signature="e#1570#1571#0" expanded="false" />
-            <element signature="e#1598#1599#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1671#1672#0" expanded="false" />
-            <element signature="e#1703#1704#0" expanded="false" />
-            <element signature="e#1734#1735#0" expanded="false" />
-            <element signature="e#1779#1780#0" expanded="false" />
-            <element signature="e#1819#1820#0" expanded="false" />
-            <element signature="e#1856#1857#0" expanded="false" />
-            <element signature="e#1892#1893#0" expanded="false" />
-            <element signature="e#1947#1948#0" expanded="false" />
-            <element signature="e#1997#1998#0" expanded="false" />
-            <element signature="e#2032#2033#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
-            <element signature="e#2117#2118#0" expanded="false" />
-            <element signature="e#2163#2164#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1198,11 +1263,10 @@
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="911:980" ph="insert into user... " />
+            <marker date="1492889562377" expanded="true" signature="1080:1122" ph="select count... user" />
+            <marker date="1492889562377" expanded="true" signature="1425:1441" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="1440:1441" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1213,11 +1277,10 @@
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="911:980" ph="insert into user... " />
+            <marker date="1492889562377" expanded="true" signature="1080:1122" ph="select count... user" />
+            <marker date="1492889562377" expanded="true" signature="1425:1441" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="1440:1441" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1227,15 +1290,17 @@
         <state relative-caret-position="493">
           <caret line="32" column="49" lean-forward="false" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1491837404075" expanded="true" signature="1340:1352" ph="insert into komentar... " />
-            <marker date="1491837404075" expanded="true" signature="1340:1546" ph="insert into comment... " />
-            <marker date="1491837404075" expanded="true" signature="1859:1918" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="2090:2155" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="2383:2437" ph="select likes... comment" />
-            <marker date="1491837404075" expanded="true" signature="2669:2726" ph="select disli... comment" />
-            <marker date="1491837404075" expanded="true" signature="3199:3319" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="3214:3319" ph="UPDATE `kome... " />
+            <marker date="1492891066221" expanded="true" signature="1340:1352" ph="insert into komentar... " />
+            <marker date="1492891066221" expanded="true" signature="1340:1546" ph="insert into comment... " />
+            <marker date="1492891066221" expanded="true" signature="1859:1918" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="2090:2155" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="2383:2437" ph="select likes... comment" />
+            <marker date="1492891066221" expanded="true" signature="2669:2726" ph="select disli... comment" />
+            <marker date="1492891066221" expanded="true" signature="2957:3010" ph="select text comment" />
+            <marker date="1492891066221" expanded="true" signature="3473:3593" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="3488:3593" ph="UPDATE `kome... " />
+            <marker date="1492891066221" expanded="true" signature="3818:3876" ph="select date_... comment" />
+            <marker date="1492891066221" expanded="true" signature="3986:4005" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1245,38 +1310,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <element signature="e#877#878#0" expanded="false" />
-            <element signature="e#907#908#0" expanded="false" />
-            <element signature="e#950#951#0" expanded="false" />
-            <element signature="e#988#989#0" expanded="false" />
-            <element signature="e#1018#1019#0" expanded="false" />
-            <element signature="e#1044#1045#0" expanded="false" />
-            <element signature="e#1082#1083#0" expanded="false" />
-            <element signature="e#1112#1113#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1170#1171#0" expanded="false" />
-            <element signature="e#1210#1211#0" expanded="false" />
-            <element signature="e#1242#1243#0" expanded="false" />
-            <element signature="e#1280#1281#0" expanded="false" />
-            <element signature="e#1316#1317#0" expanded="false" />
-            <element signature="e#1372#1373#0" expanded="false" />
-            <element signature="e#1422#1423#0" expanded="false" />
-            <element signature="e#1456#1457#0" expanded="false" />
-            <element signature="e#1488#1489#0" expanded="false" />
-            <element signature="e#1536#1537#0" expanded="false" />
-            <element signature="e#1578#1579#0" expanded="false" />
-            <element signature="e#1607#1608#0" expanded="false" />
-            <element signature="e#1635#1636#0" expanded="false" />
-            <element signature="e#1674#1675#0" expanded="false" />
-            <element signature="e#1708#1709#0" expanded="false" />
-            <element signature="e#1740#1741#0" expanded="false" />
-            <element signature="e#1771#1772#0" expanded="false" />
-            <element signature="e#1816#1817#0" expanded="false" />
-            <element signature="e#1856#1857#0" expanded="false" />
-            <element signature="e#1891#1892#0" expanded="false" />
-            <element signature="e#1925#1926#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1286,20 +1320,21 @@
         <state relative-caret-position="493">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
-            <marker date="1491836935061" expanded="true" signature="1293:1305" ph="insert into obrazek... " />
-            <marker date="1491836935061" expanded="true" signature="1293:1475" ph="insert into image... " />
-            <marker date="1491836935061" expanded="true" signature="1829:1867" ph="select * fro... image" />
-            <marker date="1491836935061" expanded="true" signature="2011:2054" ph="select count... image" />
-            <marker date="1491836935061" expanded="true" signature="2275:2330" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="2498:2559" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="2780:2828" ph="select likes... image" />
-            <marker date="1491836935061" expanded="true" signature="3054:3105" ph="select disli... image" />
-            <marker date="1491836935061" expanded="true" signature="3557:3659" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="4096:4196" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="4411:4458" ph="select name image" />
-            <marker date="1491836935061" expanded="true" signature="4681:4727" ph="select url f... image" />
-            <marker date="1491836935061" expanded="true" signature="4963:5015" ph="select date_... image" />
-            <marker date="1491836935061" expanded="true" signature="4990:5015" ph="select datum... obrazek" />
+            <marker date="1492889897070" expanded="true" signature="1293:1305" ph="insert into obrazek... " />
+            <marker date="1492889897070" expanded="true" signature="1293:1475" ph="insert into image... " />
+            <marker date="1492889897070" expanded="true" signature="1829:1867" ph="select * fro... image" />
+            <marker date="1492889897070" expanded="true" signature="2011:2054" ph="select count... image" />
+            <marker date="1492889897070" expanded="true" signature="2275:2326" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="2494:2551" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="2772:2820" ph="select likes... image" />
+            <marker date="1492889897070" expanded="true" signature="3046:3097" ph="select disli... image" />
+            <marker date="1492889897070" expanded="true" signature="3549:3647" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="4084:4180" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="4395:4442" ph="select name image" />
+            <marker date="1492889897070" expanded="true" signature="4665:4711" ph="select url f... image" />
+            <marker date="1492889897070" expanded="true" signature="4939:4991" ph="select date_... image" />
+            <marker date="1492889897070" expanded="true" signature="4966:4991" ph="select datum... obrazek" />
+            <marker date="1492889897070" expanded="true" signature="5099:5116" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1309,38 +1344,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <element signature="e#954#955#0" expanded="false" />
-            <element signature="e#986#987#0" expanded="false" />
-            <element signature="e#1033#1034#0" expanded="false" />
-            <element signature="e#1075#1076#0" expanded="false" />
-            <element signature="e#1106#1107#0" expanded="false" />
-            <element signature="e#1133#1134#0" expanded="false" />
-            <element signature="e#1173#1174#0" expanded="false" />
-            <element signature="e#1205#1206#0" expanded="false" />
-            <element signature="e#1243#1244#0" expanded="false" />
-            <element signature="e#1279#1280#0" expanded="false" />
-            <element signature="e#1335#1336#0" expanded="false" />
-            <element signature="e#1385#1386#0" expanded="false" />
-            <element signature="e#1419#1420#0" expanded="false" />
-            <element signature="e#1451#1452#0" expanded="false" />
-            <element signature="e#1499#1500#0" expanded="false" />
-            <element signature="e#1541#1542#0" expanded="false" />
-            <element signature="e#1570#1571#0" expanded="false" />
-            <element signature="e#1598#1599#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1671#1672#0" expanded="false" />
-            <element signature="e#1703#1704#0" expanded="false" />
-            <element signature="e#1734#1735#0" expanded="false" />
-            <element signature="e#1779#1780#0" expanded="false" />
-            <element signature="e#1819#1820#0" expanded="false" />
-            <element signature="e#1856#1857#0" expanded="false" />
-            <element signature="e#1892#1893#0" expanded="false" />
-            <element signature="e#1947#1948#0" expanded="false" />
-            <element signature="e#1997#1998#0" expanded="false" />
-            <element signature="e#2032#2033#0" expanded="false" />
-            <element signature="e#2066#2067#0" expanded="false" />
-            <element signature="e#2117#2118#0" expanded="false" />
-            <element signature="e#2163#2164#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1358,8 +1362,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1491232179634" expanded="true" signature="692:750" ph="insert into tag... " />
+            <element signature="imports" expanded="true" />
+            <marker date="1492891856823" expanded="true" signature="771:810" ph="insert into tag... " />
+            <marker date="1492891856823" expanded="true" signature="1044:1059" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1389,11 +1394,10 @@
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="911:980" ph="insert into user... " />
+            <marker date="1492889562377" expanded="true" signature="1080:1122" ph="select count... user" />
+            <marker date="1492889562377" expanded="true" signature="1425:1441" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="1440:1441" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1406,17 +1410,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Offer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/TagsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1491232179634" expanded="true" signature="692:750" ph="insert into tag... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/OffersDaoTests.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1430,7 +1423,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#1221#1222#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1462,11 +1458,10 @@
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="911:980" ph="insert into user... " />
+            <marker date="1492889562377" expanded="true" signature="1080:1122" ph="select count... user" />
+            <marker date="1492889562377" expanded="true" signature="1425:1441" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="1440:1441" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1480,104 +1475,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/OffersDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="70" column="30" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1491837404075" expanded="true" signature="1340:1352" ph="insert into komentar... " />
-            <marker date="1491837404075" expanded="true" signature="1340:1546" ph="insert into comment... " />
-            <marker date="1491837404075" expanded="true" signature="1859:1918" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="2090:2155" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="2383:2437" ph="select likes... comment" />
-            <marker date="1491837404075" expanded="true" signature="2669:2726" ph="select disli... comment" />
-            <marker date="1491837404075" expanded="true" signature="3199:3319" ph="UPDATE `comm... " />
-            <marker date="1491837404075" expanded="true" signature="3214:3319" ph="UPDATE `kome... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/ImagesDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="124" column="65" lean-forward="false" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
-          <folding>
-            <marker date="1491836935061" expanded="true" signature="1293:1305" ph="insert into obrazek... " />
-            <marker date="1491836935061" expanded="true" signature="1293:1475" ph="insert into image... " />
-            <marker date="1491836935061" expanded="true" signature="1829:1867" ph="select * fro... image" />
-            <marker date="1491836935061" expanded="true" signature="2011:2054" ph="select count... image" />
-            <marker date="1491836935061" expanded="true" signature="2275:2330" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="2498:2559" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="2780:2828" ph="select likes... image" />
-            <marker date="1491836935061" expanded="true" signature="3054:3105" ph="select disli... image" />
-            <marker date="1491836935061" expanded="true" signature="3557:3659" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="4096:4196" ph="UPDATE `imag... " />
-            <marker date="1491836935061" expanded="true" signature="4411:4458" ph="select name image" />
-            <marker date="1491836935061" expanded="true" signature="4681:4727" ph="select url f... image" />
-            <marker date="1491836935061" expanded="true" signature="4963:5015" ph="select date_... image" />
-            <marker date="1491836935061" expanded="true" signature="4990:5015" ph="select datum... obrazek" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/application-test.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/develdb.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-devel.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/provisioning/Provisioner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="274">
+          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1492882456042" expanded="true" signature="853:902" ph="SELECT TABLE... TABLES" />
+            <marker date="1492882456042" expanded="true" signature="1151:1200" ph="SELECT TABLE... TABLES" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1589,61 +1502,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/create_tables.hsql">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="124" column="37" lean-forward="false" selection-start-line="124" selection-start-column="37" selection-end-line="124" selection-end-column="37" />
+        <state relative-caret-position="493">
+          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-devel.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="42" lean-forward="false" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/application-test.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1492373840214" expanded="true" signature="1191:1203" ph="insert into autor... " />
-            <marker date="1492373840214" expanded="true" signature="1191:1274" ph="insert into user... " />
-            <marker date="1492373840214" expanded="true" signature="1426:1468" ph="select count... user" />
-            <marker date="1492373840214" expanded="true" signature="2045:2062" ph="DELETE FROM " />
-            <marker date="1492373840214" expanded="true" signature="2060:2062" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Tag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="578">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="119">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1652,11 +1546,149 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="-221">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/ImagesDaoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="108" column="87" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="108" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/UsersDaoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="68" column="1" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="68" selection-end-column="1" />
+          <folding>
+            <element signature="e#1221#1222#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/ImagesDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="125" column="5" lean-forward="true" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+          <folding>
+            <marker date="1492889897070" expanded="true" signature="1293:1305" ph="insert into obrazek... " />
+            <marker date="1492889897070" expanded="true" signature="1293:1475" ph="insert into image... " />
+            <marker date="1492889897070" expanded="true" signature="1829:1867" ph="select * fro... image" />
+            <marker date="1492889897070" expanded="true" signature="2011:2054" ph="select count... image" />
+            <marker date="1492889897070" expanded="true" signature="2275:2326" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="2494:2551" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="2772:2820" ph="select likes... image" />
+            <marker date="1492889897070" expanded="true" signature="3046:3097" ph="select disli... image" />
+            <marker date="1492889897070" expanded="true" signature="3549:3647" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="4084:4180" ph="UPDATE `imag... " />
+            <marker date="1492889897070" expanded="true" signature="4395:4442" ph="select name image" />
+            <marker date="1492889897070" expanded="true" signature="4665:4711" ph="select url f... image" />
+            <marker date="1492889897070" expanded="true" signature="4939:4991" ph="select date_... image" />
+            <marker date="1492889897070" expanded="true" signature="4966:4991" ph="select datum... obrazek" />
+            <marker date="1492889897070" expanded="true" signature="5099:5116" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/create_tables.hsql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="51" column="39" lean-forward="false" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/Tag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/UsersDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1492889562377" expanded="true" signature="911:980" ph="insert into user... " />
+            <marker date="1492889562377" expanded="true" signature="1080:1122" ph="select count... user" />
+            <marker date="1492889562377" expanded="true" signature="1425:1441" ph="DELETE FROM " />
+            <marker date="1492889562377" expanded="true" signature="1440:1441" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/CommentsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1243">
+          <caret line="93" column="108" lean-forward="false" selection-start-line="93" selection-start-column="108" selection-end-line="93" selection-end-column="108" />
+          <folding>
+            <marker date="1492891066221" expanded="true" signature="1340:1352" ph="insert into komentar... " />
+            <marker date="1492891066221" expanded="true" signature="1340:1546" ph="insert into comment... " />
+            <marker date="1492891066221" expanded="true" signature="1859:1918" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="2090:2155" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="2383:2437" ph="select likes... comment" />
+            <marker date="1492891066221" expanded="true" signature="2669:2726" ph="select disli... comment" />
+            <marker date="1492891066221" expanded="true" signature="2957:3010" ph="select text comment" />
+            <marker date="1492891066221" expanded="true" signature="3473:3593" ph="UPDATE `comm... " />
+            <marker date="1492891066221" expanded="true" signature="3488:3593" ph="UPDATE `kome... " />
+            <marker date="1492891066221" expanded="true" signature="3818:3876" ph="select date_... comment" />
+            <marker date="1492891066221" expanded="true" signature="3986:4005" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/TagsDaoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="57" column="71" lean-forward="false" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/TagsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1492891856823" expanded="true" signature="771:810" ph="insert into tag... " />
+            <marker date="1492891856823" expanded="true" signature="1044:1059" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cz/tul/CommentsDaoTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

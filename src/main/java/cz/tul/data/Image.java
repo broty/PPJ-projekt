@@ -7,12 +7,7 @@ import java.util.Date;
  * Created by Martin on 03.04.2017.
  */
 
-@Entity
-@Table(name = "image")
 public class Image {
-    @Id
-    @GeneratedValue
-    @Column(name = "idimage")
     private int idimage;
 
     private String url;

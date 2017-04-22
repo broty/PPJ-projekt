@@ -7,15 +7,9 @@ import java.util.Date;
  * Created by Martin on 03.04.2017.
  */
 
-@Entity
-@Table(name = "comment")
-public class Comment {
-    @Id
-    @GeneratedValue
-    @Column(name = "idcomment")
-    private int idcomment;
 
-    @Column(name = "text")
+public class Comment {
+    private int idcomment;
     private String text;
     private Date date_creation;
     private Date date_edit;

@@ -67,17 +67,34 @@ public class CommentsDao {
         return jdbc.queryForObject("select dislikes from comment where idcomment = :idcomment", params, Integer.class);
     }
 
+    public String getText(int idcomment) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("idcomment", idcomment);
 
-    public boolean editComment(int idcomment, String newKomentar) {
+        return jdbc.queryForObject("select text from comment where idcomment = :idcomment", params, String.class);
+    }
+
+    public boolean editComment(int idcomment, String newText) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         params.addValue("idcomment", idcomment);
-        params.addValue("newKomentar", newKomentar);
+        params.addValue("newKomentar", newText);
         params.addValue("datum", sdf.format(new Date()));
         return jdbc.update("UPDATE `comment` SET text = :newKomentar, datum_aktualizace = :datum " +
                 "WHERE `idcomment` = :idcomment", params) == 1;
+    }
+
+    public String getDateEdit(int idcomment) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("idcomment", idcomment);
+
+        return jdbc.queryForObject("select date_edit from comment where idcomment = :idcomment", params, String.class);
+    }
+
+    public void deleteComments() {
+        jdbc.getJdbcOperations().execute("DELETE FROM comment");
     }
 }

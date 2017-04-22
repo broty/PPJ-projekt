@@ -55,12 +55,12 @@ public class ImagesDao {
 
     public boolean lajk(int idimage) {
         MapSqlParameterSource param = new MapSqlParameterSource();
-        return jdbc.update("UPDATE `image` SET likes = likes + 1 WHERE `idimage` = " + idimage, param) == 1;
+        return jdbc.update("UPDATE image SET likes = likes + 1 WHERE idimage = " + idimage, param) == 1;
     }
 
     public boolean dislajk(int idimage) {
         MapSqlParameterSource par = new MapSqlParameterSource();
-        return jdbc.update("UPDATE `image` SET dislikes = dislikes + 1 WHERE `idimage` = " + idimage, par) == 1;
+        return jdbc.update("UPDATE image SET dislikes = dislikes + 1 WHERE idimage = " + idimage, par) == 1;
     }
 
     public int getLajks(int idimage) {
@@ -87,8 +87,8 @@ public class ImagesDao {
         params.addValue("idimage", idimage);
         params.addValue("newName", newName);
         params.addValue("datum", sdf.format(new Date()));
-        return jdbc.update("UPDATE `image` SET name = :newName, date_edit = :datum " +
-                "WHERE `idimage` = :idimage", params) == 1;
+        return jdbc.update("UPDATE image SET name = :newName, date_edit = :datum " +
+                "WHERE idimage = :idimage", params) == 1;
     }
 
     public boolean editUrl(int idimage, String newUrl) {
@@ -100,8 +100,8 @@ public class ImagesDao {
         params.addValue("idimage", idimage);
         params.addValue("newUrl", newUrl);
         params.addValue("datum", sdf.format(new Date()));
-        return jdbc.update("UPDATE `image` SET url = :newUrl, date_edit = :datum " +
-                "WHERE `idimage` = :idimage", params) == 1;
+        return jdbc.update("UPDATE image SET url = :newUrl, date_edit = :datum " +
+                "WHERE idimage = :idimage", params) == 1;
     }
 
     public String getName(int idimage) {
@@ -118,10 +118,14 @@ public class ImagesDao {
         return jdbc.queryForObject("select url from image where idimage = :idimage", params, String.class);
     }
 
-    public String getDatumAktualizace(int idimage) {
+    public String getDateEdit(int idimage) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("idimage", idimage);
 
         return jdbc.queryForObject("select date_edit from image where idimage = :idimage", params, String.class);
+    }
+
+    public void deleteImages() {
+        jdbc.getJdbcOperations().execute("DELETE FROM image");
     }
 }

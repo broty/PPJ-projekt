@@ -5,10 +5,12 @@ package cz.tul.data;
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 
 
 public class TagsDao {
@@ -21,15 +23,16 @@ public class TagsDao {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         params.addValue("idtag", tag.getIdtag());
-        params.addValue("hodnota", tag.getHodnota());
+        params.addValue("value", tag.getValue());
 
-        return jdbc.update("insert into tag (idtag, hodnota) values (:idtag, :hodnota)", params) == 1;
+        return jdbc.update("insert into tag (value) values (:value)", params) == 1;
+    }
+
+    public List<Tag> getAllTags() {
+        return jdbc.query("select * from tag", BeanPropertyRowMapper.newInstance(Tag.class));
+    }
+
+    public void deleteTags() {
+        jdbc.getJdbcOperations().execute("DELETE FROM tag");
     }
 }
-
-// testy: vytvorit uzivatele, vypsat seznam uzivatelu
-// pridani obrazku, otestovat ze je pridany
-// uzivatel obrazek lajkne, otestovat ze obrazek ma o lajk vic
-// test - zmena neceho u obrazku - provedena zmena a aktualizovan datum zmeny
-// pridani komentu, overit ze tam je
-// vyhledani obrazku podle jmena
