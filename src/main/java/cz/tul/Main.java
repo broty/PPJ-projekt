@@ -2,6 +2,7 @@ package cz.tul;
 
 import cz.tul.data.CommentsDao;
 import cz.tul.data.ImagesDao;
+import cz.tul.data.TagsDao;
 import cz.tul.data.UsersDao;
 import cz.tul.provisioning.Provisioner;
 import org.hibernate.SessionFactory;
@@ -12,7 +13,7 @@ import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
-import org.springframework.orm.hibernate3.HibernateTransactionManager;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -38,6 +39,9 @@ public class Main {
         return new ImagesDao();
     }
 
+    @Bean
+    public TagsDao tagsDao() { return  new TagsDao(); }
+
     @Autowired
     EntityManagerFactory entityManagerFactory;
 
@@ -50,11 +54,11 @@ public class Main {
         return new HibernateTransactionManager(entityManagerFactory.unwrap(SessionFactory.class));
     }
 
-    @Profile({"devel", "test"})
+    /*@Profile({"devel", "test"})
     @Bean(initMethod = "doProvision")
     public Provisioner provisioner() {
         return new Provisioner();
-    }
+    }*/
 
     public static void main(String[] args) throws Exception {
 

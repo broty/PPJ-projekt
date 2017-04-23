@@ -16,7 +16,10 @@ public class User {
     @Column(name = "iduser")
     private int iduser;
 
+    @Column(name = "date_creation")
     private Date date_creation;
+
+    @Column(name = "name")
     private String name;
 
     public User() {

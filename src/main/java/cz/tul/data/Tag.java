@@ -1,17 +1,29 @@
 package cz.tul.data;
 
+import javax.persistence.*;
+
 /**
  * Created by Martin on 03.04.2017.
  */
+
+@Entity
+@Table(name = "tag")
 public class Tag {
+    @Id
+    @GeneratedValue
+    @Column(name = "idtag")
     private int idtag;
-    private String hodnota;
+    private String value;
 
     public Tag() {}
 
-    public Tag(int idtag, String hodnota) {
+    public Tag(String value) {
+        this.value = value;
+    }
+
+    public Tag(int idtag, String value) {
         this.idtag = idtag;
-        this.hodnota = hodnota;
+        this.value = value;
     }
 
     public int getIdtag() {
@@ -22,11 +34,11 @@ public class Tag {
         this.idtag = idtag;
     }
 
-    public String getHodnota() {
-        return hodnota;
+    public String getValue() {
+        return value;
     }
 
-    public void setHodnota(String hodnota) {
-        this.hodnota = hodnota;
+    public void setValue(String value) {
+        this.value = value;
     }
 }

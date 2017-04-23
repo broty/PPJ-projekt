@@ -120,5 +120,6 @@ public class ImagesDaoTests {
 
         assertTrue("Failed to change image NAME", name1 != name2);
         assertTrue("Edit date should change after NAME update", editDate1 != editDate2);
+
     }
 }

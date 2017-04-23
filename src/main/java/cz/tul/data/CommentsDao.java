@@ -4,6 +4,12 @@ package cz.tul.data;
  * Created by Martin on 03.04.2017.
  */
 
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -13,71 +19,74 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 import java.util.List;
 
-
+@Transactional
 public class CommentsDao {
 
     @Autowired
-    private NamedParameterJdbcOperations jdbc;
+    private SessionFactory sessionFactory;
 
-    @Transactional
-    public boolean create(Comment comment) {
+    public Session session() { return sessionFactory.getCurrentSession();}
 
-        MapSqlParameterSource params = new MapSqlParameterSource();
 
-        java.text.SimpleDateFormat sdf =
-                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        params.addValue("idcomment", comment.getIdcomment());
-        params.addValue("text", comment.getText());
-        params.addValue("date_creation", sdf.format(comment.getDate_creation()));
-        params.addValue("date_edit", sdf.format(comment.getDate_edit()));
-        params.addValue("likes", comment.getLikes());
-        params.addValue("dislikes", comment.getDislikes());
-        params.addValue("image_idimage", comment.getImage_idimage());
-        params.addValue("user_iduser", comment.getUser_iduser());
-
-        return jdbc.update("insert into comment (idcomment, text, date_creation, date_edit, likes, dislikes, image_idimage, user_iduser) values (NULL, :text, :date_creation, :date_edit, :likes, :dislikes, :image_idimage, :user_iduser)", params) == 1;
+    public void create(Comment comment) {
+        session().save(comment);
     }
 
     public List<Comment> getAllComments() {
-        return jdbc.query("select * from comment", BeanPropertyRowMapper.newInstance(Comment.class));
+        Criteria crit = session().createCriteria(Comment.class);
+        return crit.list();
     }
 
     public boolean lajk(int idcomment) {
-        MapSqlParameterSource param = new MapSqlParameterSource();
-        return jdbc.update("UPDATE `comment` SET likes = likes + 1 WHERE `idcomment` = " + idcomment, param) == 1;
+        Query query = session().createQuery("update Comment set likes = likes + 1");
+        return query.executeUpdate() == 1;
     }
 
     public boolean dislajk(int idcomment) {
-        MapSqlParameterSource par = new MapSqlParameterSource();
-        return jdbc.update("UPDATE `comment` SET dislikes = dislikes + 1 WHERE `idcomment` = " + idcomment, par) == 1;
+        Query query = session().createQuery("update Comment set dislikes = dislikes + 1");
+        return query.executeUpdate() == 1;
     }
 
     public int getLajks(int idcomment) {
-        MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("idcomment", idcomment);
-
-        return jdbc.queryForObject("select likes from comment where idcomment = :idcomment", params, Integer.class);
+        Criteria crit = session().createCriteria(Comment.class);
+        crit.add(Restrictions.eq("idcomment", idcomment));
+        crit.setProjection(Projections.property("likes"));
+        return (int) crit.list().get(0);
     }
 
     public int getDislajks(int idcomment) {
-        MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("idcomment", idcomment);
-
-        return jdbc.queryForObject("select dislikes from comment where idcomment = :idcomment", params, Integer.class);
+        Criteria crit = session().createCriteria(Comment.class);
+        crit.add(Restrictions.eq("idcomment", idcomment));
+        crit.setProjection(Projections.property("dislikes"));
+        return (int) crit.list().get(0);
     }
 
 
-    public boolean editComment(int idcomment, String newKomentar) {
-        MapSqlParameterSource params = new MapSqlParameterSource();
+    public boolean editComment(int idcomment, String newText) {
+        Query query = session().createQuery("update Comment set text = :newText, date_edit = :datum " +
+                "where idcomment = :idcomment");
+        query.setParameter("newText", newText);
+        query.setParameter("datum", new Date());
+        query.setParameter("idcomment", idcomment);
 
-        java.text.SimpleDateFormat sdf =
-                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return query.executeUpdate() > 0;
+    }
 
-        params.addValue("idcomment", idcomment);
-        params.addValue("newKomentar", newKomentar);
-        params.addValue("datum", sdf.format(new Date()));
-        return jdbc.update("UPDATE `comment` SET text = :newKomentar, datum_aktualizace = :datum " +
-                "WHERE `idcomment` = :idcomment", params) == 1;
+    public void deleteComments() {
+        session().createQuery("delete from Comment").executeUpdate();
+    }
+
+    public String getText(int id) {
+        Criteria crit = session().createCriteria(Comment.class);
+        crit.add(Restrictions.eq("id", id));
+        crit.setProjection(Projections.property("text"));
+        return crit.list().get(0).toString();
+    }
+
+    public String getDateEdit(int id) {
+        Criteria crit = session().createCriteria(Comment.class);
+        crit.add(Restrictions.eq("id", id));
+        crit.setProjection(Projections.property("date_edit"));
+        return crit.list().get(0).toString();
     }
 }

@@ -2,7 +2,6 @@ package cz.tul;
 
 import cz.tul.data.Tag;
 import cz.tul.data.TagsDao;
-import cz.tul.data.User;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -16,8 +15,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Martin on 09.04.2017.

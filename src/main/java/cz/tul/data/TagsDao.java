@@ -4,32 +4,31 @@ package cz.tul.data;
  * Created by Martin on 03.04.2017.
  */
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 
 
+@Transactional
 public class TagsDao {
 
     @Autowired
-    private NamedParameterJdbcOperations jdbc;
+    private SessionFactory sessionFactory;
 
-    @Transactional
-    public boolean create(Tag tag) {
-        MapSqlParameterSource params = new MapSqlParameterSource();
+    public Session session() { return sessionFactory.getCurrentSession();}
 
-        params.addValue("idtag", tag.getIdtag());
-        params.addValue("hodnota", tag.getHodnota());
+    public void create(Tag tag) {
+        session().save(tag);
+    }
 
-        return jdbc.update("insert into tag (idtag, hodnota) values (:idtag, :hodnota)", params) == 1;
+    public List<Tag> getAllTags() {
+        return session().createCriteria(Tag.class).list();
+    }
+
+    public void deleteTags() {
+        session().createQuery("delete from Tag").executeUpdate();
     }
 }
-
-// testy: vytvorit uzivatele, vypsat seznam uzivatelu
-// pridani obrazku, otestovat ze je pridany
-// uzivatel obrazek lajkne, otestovat ze obrazek ma o lajk vic
-// test - zmena neceho u obrazku - provedena zmena a aktualizovan datum zmeny
-// pridani komentu, overit ze tam je
-// vyhledani obrazku podle jmena
