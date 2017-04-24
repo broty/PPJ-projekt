@@ -12,6 +12,7 @@ Lecture5_SpringJDBC/
 *.lck
 *.script
 *.data
+*.mwb
 
 target/
 *.iml
