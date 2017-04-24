@@ -1,5 +1,6 @@
 *.class
 .idea/
+.target/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -8,6 +9,9 @@
 *.jar
 *.war
 *.ear
+*.lck
+*.script
+*.data
 
 target
 *.iml
