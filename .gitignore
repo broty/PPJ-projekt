@@ -1,5 +1,6 @@
 *.class
-.idea
+.idea/
+Lecture5_SpringJDBC/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -8,6 +9,14 @@
 *.jar
 *.war
 *.ear
+*.lck
+*.script
+*.data
+*.mwb
+
+target/
+*.iml
+*.log
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
