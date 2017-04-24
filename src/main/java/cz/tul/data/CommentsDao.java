@@ -27,14 +27,14 @@ public class CommentsDao {
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        params.addValue("idcomment", comment.getIdcomment());
+        params.addValue("idcomment", comment.getId());
         params.addValue("text", comment.getText());
-        params.addValue("date_creation", sdf.format(comment.getDate_creation()));
-        params.addValue("date_edit", sdf.format(comment.getDate_edit()));
+        params.addValue("date_creation", sdf.format(comment.getDateCreate()));
+        params.addValue("date_edit", sdf.format(comment.getDateEdit()));
         params.addValue("likes", comment.getLikes());
         params.addValue("dislikes", comment.getDislikes());
-        params.addValue("image_idimage", comment.getImage_idimage());
-        params.addValue("user_iduser", comment.getUser_iduser());
+        params.addValue("image_idimage", comment.getIdImage());
+        params.addValue("user_iduser", comment.getIdUser());
 
         return jdbc.update("insert into comment (idcomment, text, date_creation, date_edit, likes, dislikes, image_idimage, user_iduser) values (NULL, :text, :date_creation, :date_edit, :likes, :dislikes, :image_idimage, :user_iduser)", params) == 1;
     }

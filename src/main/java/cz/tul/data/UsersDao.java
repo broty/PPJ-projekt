@@ -21,21 +21,17 @@ public class UsersDao {
     public boolean create(User user) {
 
         MapSqlParameterSource params = new MapSqlParameterSource();
-
-        java.text.SimpleDateFormat sdf =
-                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        params.addValue("date_creation", sdf.format(user.getDate_creation()));
+        
+        params.addValue("dateCreate", user.getDateCreate());
         params.addValue("name", user.getName());
 
-        return jdbc.update("insert into user (date_creation, name) values (:date_creation, :name)", params) == 1;
+        return jdbc.update("insert into user (dateCreate, name) values (:dateCreate, :name)", params) == 1;
     }
 
    public boolean exists(String name) {
         return jdbc.queryForObject("select count(*) from user where name=:name",
                 new MapSqlParameterSource("name", name), Integer.class) > 0;
     }
-
 
     public List<User> getAllUsers() {
         return jdbc.query("select * from user", BeanPropertyRowMapper.newInstance(User.class));

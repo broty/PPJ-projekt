@@ -1,6 +1,5 @@
 package cz.tul.data;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -9,35 +8,35 @@ import java.util.Date;
 
 
 public class Comment {
-    private int idcomment;
+    private int id;
     private String text;
-    private Date date_creation;
-    private Date date_edit;
+    private Date dateCreate;
+    private Date dateEdit;
     private int likes;
     private int dislikes;
-    private int image_idimage;
-    private int user_iduser;
+    private int idImage;
+    private int idUser;
 
     public Comment() {
     }
 
-    public Comment(String text, Date date_creation, Date date_edit, int likes,
-                   int dislikes, int image_idimage, int user_iduser) {
+    public Comment(String text, Date dateCreate, Date dateEdit, int likes,
+                   int dislikes, int idImage, int idUser) {
         this.text = text;
-        this.date_creation = date_creation;
-        this.date_edit = date_edit;
+        this.dateCreate = dateCreate;
+        this.dateEdit = dateEdit;
         this.likes = likes;
         this.dislikes = dislikes;
-        this.image_idimage = image_idimage;
-        this.user_iduser = user_iduser;
+        this.idImage = idImage;
+        this.idUser = idUser;
     }
 
-    public int getIdcomment() {
-        return idcomment;
+    public int getId() {
+        return id;
     }
 
-    public void setIdcomment(int idcomment) {
-        this.idcomment = idcomment;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getText() {
@@ -48,20 +47,20 @@ public class Comment {
         this.text = text;
     }
 
-    public Date getDate_creation() {
-        return date_creation;
+    public Date getDateCreate() {
+        return dateCreate;
     }
 
-    public void setDate_creation(Date date_creation) {
-        this.date_creation = date_creation;
+    public void setDateCreate(Date dateCreate) {
+        this.dateCreate = dateCreate;
     }
 
-    public Date getDate_edit() {
-        return date_edit;
+    public Date getDateEdit() {
+        return dateEdit;
     }
 
-    public void setDate_edit(Date date_edit) {
-        this.date_edit = date_edit;
+    public void setDateEdit(Date dateEdit) {
+        this.dateEdit = dateEdit;
     }
 
     public int getLikes() {
@@ -80,19 +79,19 @@ public class Comment {
         this.dislikes = dislikes;
     }
 
-    public int getImage_idimage() {
-        return image_idimage;
+    public int getIdImage() {
+        return idImage;
     }
 
-    public void setImage_idimage(int image_idimage) {
-        this.image_idimage = image_idimage;
+    public void setIdImage(int idImage) {
+        this.idImage = idImage;
     }
 
-    public int getUser_iduser() {
-        return user_iduser;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setUser_iduser(int user_iduser) {
-        this.user_iduser = user_iduser;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 }

@@ -22,7 +22,7 @@ public class TagsDao {
     public boolean create(Tag tag) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
-        params.addValue("idtag", tag.getIdtag());
+        params.addValue("idtag", tag.getId());
         params.addValue("value", tag.getValue());
 
         return jdbc.update("insert into tag (value) values (:value)", params) == 1;

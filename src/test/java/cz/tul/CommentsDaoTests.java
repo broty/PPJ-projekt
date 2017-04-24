@@ -93,19 +93,19 @@ public class CommentsDaoTests {
         // test like
 
         int likes1 = comments1.get(0).getLikes();
-        commentsDao.lajk(comments1.get(0).getIdcomment());
+        commentsDao.lajk(comments1.get(0).getId());
 
-        assertTrue("Comment should have incremented likes", likes1 < commentsDao.getLajks(comments2.get(0).getIdcomment()));
+        assertTrue("Comment should have incremented likes", likes1 < commentsDao.getLajks(comments2.get(0).getId()));
 
         // test dislike
 
         int dislikes1 = comments1.get(0).getDislikes();
-        commentsDao.dislajk(comments1.get(0).getIdcomment());
+        commentsDao.dislajk(comments1.get(0).getId());
 
-        assertTrue("Comment should have incremented dislikes", dislikes1 < commentsDao.getDislajks(comments2.get(0).getIdcomment()));
+        assertTrue("Comment should have incremented dislikes", dislikes1 < commentsDao.getDislajks(comments2.get(0).getId()));
 
         // test edit text
-        int id = comments2.get(2).getIdcomment();
+        int id = comments2.get(2).getId();
         String text1 = commentsDao.getText(id);
         String editDate1 = commentsDao.getDateEdit(id);
 

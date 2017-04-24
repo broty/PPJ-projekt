@@ -6,10 +6,14 @@ package cz.tul.data;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
@@ -23,29 +27,42 @@ public class ImagesDao {
     public boolean create(Image image) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
-        java.text.SimpleDateFormat sdf =
-                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        params.addValue("idimage", image.getIdimage());
+        params.addValue("id", image.getId());
         params.addValue("url", image.getUrl());
         params.addValue("name", image.getName());
-        params.addValue("date_creation", sdf.format(image.getDate_creation()));
-        params.addValue("date_edit", sdf.format(image.getDate_edit()));
+        params.addValue("dateCreate", image.getDateCreate());
+        params.addValue("dateEdit", image.getDateEdit());
         params.addValue("likes", image.getLikes());
         params.addValue("dislikes", image.getDislikes());
-        params.addValue("user_iduser", image.getUser_iduser());
+        params.addValue("idUser", image.getIdUser());
 
-        return jdbc.update("insert into image (idimage, url, name, date_creation, date_edit, likes, dislikes, user_iduser) values (NULL, :url, :name, :date_creation, :date_edit, :likes, :dislikes, :user_iduser)", params) == 1;
+        return jdbc.update("insert into image (id, url, name, dateCreate, dateEdit, likes, dislikes, idUser) values (NULL, :url, :name, :dateCreate, :dateEdit, :likes, :dislikes, :idUser)", params) == 1;
     }
 
     public List<Image> getAllImages() {
         return jdbc.query("select * from image", BeanPropertyRowMapper.newInstance(Image.class));
     }
 
-    public List<Image> getImageName(String name) {
+   /* public List<Image> getImageName(String name) {
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("name", name);
         return jdbc.query("select * from image WHERE name = :name", params, BeanPropertyRowMapper.newInstance(Image.class));
+    }*/
+
+   public Image getImage(int id) {
+       MapSqlParameterSource params = new MapSqlParameterSource();
+       params.addValue("id", id);
+       return jdbc.queryForObject("select * from image where id=:id", params, BeanPropertyRowMapper.newInstance(Image.class));
+   }
+
+    public boolean update(Image image) {
+        BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(
+                image);
+
+        return jdbc.update("update image set url=:url and name=:name and dateCreate=:dateCreate" +
+                " and dateEdit=:dateEdit and like=:likes and dislikes=:dislikes" +
+                "and idUser:=idUser" +
+                " where id=:id", params) == 1;
     }
 
     public boolean exists(String name) {
@@ -53,77 +70,77 @@ public class ImagesDao {
                 new MapSqlParameterSource("name", name), Integer.class) > 0;
     }
 
-    public boolean lajk(int idimage) {
+    /*public boolean lajk(int id) {
         MapSqlParameterSource param = new MapSqlParameterSource();
-        return jdbc.update("UPDATE image SET likes = likes + 1 WHERE idimage = " + idimage, param) == 1;
+        return jdbc.update("UPDATE image SET likes = likes + 1 WHERE id = " + id, param) == 1;
     }
 
-    public boolean dislajk(int idimage) {
+    public boolean dislajk(int id) {
         MapSqlParameterSource par = new MapSqlParameterSource();
-        return jdbc.update("UPDATE image SET dislikes = dislikes + 1 WHERE idimage = " + idimage, par) == 1;
+        return jdbc.update("UPDATE image SET dislikes = dislikes + 1 WHERE id = " + id, par) == 1;
     }
 
-    public int getLajks(int idimage) {
+    public int getLajks(int id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("idimage", idimage);
+        params.addValue("id", id);
 
-         return jdbc.queryForObject("select likes from image where idimage = :idimage", params, Integer.class);
+         return jdbc.queryForObject("select likes from image where id = :id", params, Integer.class);
     }
 
-    public int getDislajks(int idimage) {
+    public int getDislajks(int id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("idimage", idimage);
+        params.addValue("id", id);
 
-        return jdbc.queryForObject("select dislikes from image where idimage = :idimage", params, Integer.class);
+        return jdbc.queryForObject("select dislikes from image where id = :id", params, Integer.class);
     }
 
 
-    public boolean editName(int idimage, String newName) {
+    public boolean editName(int id, String newName) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        params.addValue("idimage", idimage);
+        params.addValue("id", id);
         params.addValue("newName", newName);
         params.addValue("datum", sdf.format(new Date()));
-        return jdbc.update("UPDATE image SET name = :newName, date_edit = :datum " +
-                "WHERE idimage = :idimage", params) == 1;
+        return jdbc.update("UPDATE image SET name = :newName, dateEdit = :datum " +
+                "WHERE id = :id", params) == 1;
     }
 
-    public boolean editUrl(int idimage, String newUrl) {
+    public boolean editUrl(int id, String newUrl) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        params.addValue("idimage", idimage);
+        params.addValue("id", id);
         params.addValue("newUrl", newUrl);
         params.addValue("datum", sdf.format(new Date()));
-        return jdbc.update("UPDATE image SET url = :newUrl, date_edit = :datum " +
-                "WHERE idimage = :idimage", params) == 1;
+        return jdbc.update("UPDATE image SET url = :newUrl, dateEdit = :datum " +
+                "WHERE id = :id", params) == 1;
     }
 
-    public String getName(int idimage) {
+    public String getName(int id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("idimage", idimage);
+        params.addValue("id", id);
 
-        return jdbc.queryForObject("select name from image where idimage = :idimage", params, String.class);
+        return jdbc.queryForObject("select name from image where id = :id", params, String.class);
     }
 
-    public String getUrl(int idimage) {
+    public String getUrl(int id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("idimage", idimage);
+        params.addValue("id", id);
 
-        return jdbc.queryForObject("select url from image where idimage = :idimage", params, String.class);
+        return jdbc.queryForObject("select url from image where id = :id", params, String.class);
     }
 
-    public String getDateEdit(int idimage) {
+    public String getDateEdit(int id) {
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("idimage", idimage);
+        params.addValue("id", id);
 
-        return jdbc.queryForObject("select date_edit from image where idimage = :idimage", params, String.class);
-    }
+        return jdbc.queryForObject("select dateEdit from image where id = :id", params, String.class);
+    }*/
 
     public void deleteImages() {
         jdbc.getJdbcOperations().execute("DELETE FROM image");
