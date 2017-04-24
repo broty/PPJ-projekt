@@ -1,5 +1,6 @@
 *.class
 .idea/
+Lecture5_SpringJDBC/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
