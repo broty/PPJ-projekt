@@ -25,6 +25,9 @@ public class User {
     public User() {
     }
 
+
+
+    
     public User(Date date_creation, String name) {
         this.date_creation = date_creation;
         this.name = name;

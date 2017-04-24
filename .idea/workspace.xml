@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ce78fff-148e-4726-b3d5-654d7cb44163" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" afterPath="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +54,8 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -204,7 +203,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/KomentarsDao.java" />
         <option value="$PROJECT_DIR$/src/test/resources/application-test.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/create_tables.hsql" />
         <option value="$PROJECT_DIR$/src/main/resources/application-devel.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -220,6 +218,7 @@
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/Tag.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/TagsDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cz/tul/data/User.java" />
       </list>
     </option>
   </component>
@@ -991,7 +990,7 @@
       <workItem from="1492519644925" duration="597000" />
       <workItem from="1492880487440" duration="39000" />
       <workItem from="1492892775298" duration="10521000" />
-      <workItem from="1493036685679" duration="2048000" />
+      <workItem from="1493036685679" duration="2206000" />
     </task>
     <servers />
   </component>
@@ -1028,7 +1027,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43058000" />
+    <option name="totallyTimeSpent" value="43216000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1488,8 +1487,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cz/tul/data/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding />
         </state>
       </provider>
