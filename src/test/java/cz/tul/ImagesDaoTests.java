@@ -1,9 +1,6 @@
 package cz.tul;
 
-import cz.tul.data.Image;
-import cz.tul.data.ImagesDao;
-import cz.tul.data.User;
-import cz.tul.data.UsersDao;
+import cz.tul.data.*;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -18,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -36,40 +34,63 @@ public class ImagesDaoTests {
     @Autowired
     private UsersDao usersDao;
 
-    private User user1 = new User(new Date(), "Macho1");
-    private User user2 = new User(new Date(), "Macho2");
-    private User user3 = new User(new Date(), "Macho3");
-    private User user4 = new User(new Date(), "Macho4");
+    @Autowired
+    private CommentsDao commentsDao;
 
-    private Image image1 = new Image("file:///d:/obrazky/obr1.png", "Obrazek1", new Date(), new Date(), 0, 0, 1);
-    private Image image2 = new Image("file:///d:/obrazky/obr2.png", "Obrazek2", new Date(), new Date(), 0, 0, 2);
-    private Image image3 = new Image("file:///d:/obrazky/obr3.png", "Obrazek3", new Date(), new Date(), 0, 0, 3);
-    private Image image4 = new Image("file:///d:/obrazky/obr4.png", "Obrazek4", new Date(), new Date(), 0, 0, 4);
+    private User user1;
+    private User user2;
+    private User user3;
+    private User user4;
+
+    private Image image1;
+    private Image image2;
+    private Image image3;
+    private Image image4;
 
 
     @Before
     public void init() {
-        usersDao.deleteUsers();
+        commentsDao.deleteComments();
         imagesDao.deleteImages();
+        usersDao.deleteUsers();
+
+        prepareTestData();
+    }
+
+    public void prepareTestData() {
+        user1 = new User(new Date(), "Macho1");
+        user2 = new User(new Date(), "Macho2");
+        user3 = new User(new Date(), "Macho3");
+        user4 = new User(new Date(), "Macho4");
+
+        // create users
+        usersDao.create(user1);
+        int id1 = (int)usersDao.getLastKey();
+        usersDao.create(user2);
+        int id2 =(int)usersDao.getLastKey();
+        usersDao.create(user3);
+        int id3 = (int)usersDao.getLastKey();
+        usersDao.create(user4);
+        int id4 = (int)usersDao.getLastKey();
+
+        // prepare images
+        image1 = new Image("file:///d:/obrazky/obr1.png", "Obrazek1", new Date(), new Date(), 0, 0, id1);
+        image2 = new Image("file:///d:/obrazky/obr2.png", "Obrazek2", new Date(), new Date(), 0, 0, id2);
+        image3 = new Image("file:///d:/obrazky/obr3.png", "Obrazek3", new Date(), new Date(), 0, 0, id3);
+        image4 = new Image("file:///d:/obrazky/obr4.png", "Obrazek4", new Date(), new Date(), 0, 0, id4);
     }
 
     @Test
     public void testImages() {
-
-        // create users
-        usersDao.create(user1);
-        usersDao.create(user2);
-        usersDao.create(user3);
-        usersDao.create(user4);
-
         // create and test 1 image
         imagesDao.create(image1);
+        int id = (int)imagesDao.getLastKey();
 
         List<Image> images1 = imagesDao.getAllImages();
 
         assertEquals("One image should have been created and retrieved", 1, images1.size());
 
-        assertEquals("Inserted image should match retrieved", image1.getName(), images1.get(0).getName());
+        assertEquals("Inserted image should match retrieved", image1.getName(), imagesDao.getImage(id).getName());
 
         // create and test 3 more images
         imagesDao.create(image2);
@@ -79,49 +100,40 @@ public class ImagesDaoTests {
         List<Image> images2 = imagesDao.getAllImages();
         assertEquals("Should be four retrieved images.", 4, images2.size());
 
-        assertTrue("Image should exist.", imagesDao.exists(image3.getName()));
-
+        Image img;
         // test like
 
-        Image img = imagesDao.getImage(1);
-        System.out.println("Lajkyyyyyyy: " + img.getLikes());
-/*
-        int likes1 = images2.get(0).getLikes();
-        imagesDao.lajk(images2.get(0).getId());
+        img = imagesDao.getImage(id);
+        int oldValue = img.getLikes();
 
-        assertTrue("Image should have incremented likes", likes1 < imagesDao.getLajks(images2.get(0).getId()));
+        img.setLikes(img.getLikes()+1);
+        imagesDao.update(img);
+
+        assertTrue("Image should have incremented likes.", oldValue < imagesDao.getImage(id).getLikes());
 
         // test dislike
 
-        int dislikes1 = images2.get(0).getDislikes();
-        imagesDao.dislajk(images2.get(0).getId());
+        img = imagesDao.getImage(id);
+        oldValue = img.getDislikes();
+        img.setDislikes(img.getDislikes()+1);
+        imagesDao.update(img);
 
-        assertTrue("Image should have incremented dislikes", dislikes1 < imagesDao.getDislajks(images2.get(0).getId()));
+        assertTrue("Image should have incremented dislikes.", oldValue < imagesDao.getImage(id).getDislikes());
 
-        // test change url
-        int idimg = images2.get(2).getId();
-        String url1 = imagesDao.getUrl(idimg);
-        String editDate1 = imagesDao.getDateEdit(idimg);
 
-        imagesDao.editUrl(idimg,"file:///d:/obrazek3");
+        // test edit name, edit url
+        img = imagesDao.getImage(id);
+        String oldName = img.getName();
+        String oldUrl = img.getUrl();
+        Date dateEdit = img.getDateEdit();
 
-        String url2 = imagesDao.getUrl(idimg);
-        String editDate2 = imagesDao.getDateEdit(idimg);
+        img.setName("Some new name");
+        img.setUrl("http://some.test/url");
 
-        assertTrue("Failed to change image URL.", url1 != url2);
-        assertTrue("Edit date should change after URL update", editDate1 != editDate2);
+        imagesDao.update(img);
 
-        // test change name
-        idimg = images2.get(1).getId();
-        String name1 = imagesDao.getName(idimg);
-        editDate1 = imagesDao.getDateEdit(idimg);
-
-        imagesDao.editName(idimg,"Mokrý pes");
-
-        String name2 = imagesDao.getName(idimg);
-        editDate2 = imagesDao.getDateEdit(idimg);
-
-        assertTrue("Failed to change image NAME", name1 != name2);
-        assertTrue("Edit date should change after NAME update", editDate1 != editDate2);*/
+        assertTrue("Image name should have been updated.", oldName != imagesDao.getImage(id).getName());
+        assertTrue("Image URL should have been updated", oldUrl != imagesDao.getImage(id).getUrl());
+        assertNotEquals("Date of edit should have been updated", dateEdit, imagesDao.getImage(id).getDateEdit());
     }
 }

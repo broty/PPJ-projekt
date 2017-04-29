@@ -49,7 +49,7 @@ public class TagsDaoTests {
 
         assertEquals("One tag should have been created and retrieved", 1, tags1.size());
 
-        assertEquals("Inserted tag should match retrieved", tag1.getValue(), tags1.get(0).getValue());
+        assertEquals("Inserted tag should match retrieved", tag1.getValue(), tagsDao.getTag(1).getValue());
 
         tagsDao.create(tag2);
 

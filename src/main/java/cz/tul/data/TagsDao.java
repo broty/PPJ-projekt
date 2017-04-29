@@ -22,10 +22,16 @@ public class TagsDao {
     public boolean create(Tag tag) {
         MapSqlParameterSource params = new MapSqlParameterSource();
 
-        params.addValue("idtag", tag.getId());
+        params.addValue("id", tag.getId());
         params.addValue("value", tag.getValue());
 
         return jdbc.update("insert into tag (value) values (:value)", params) == 1;
+    }
+
+    public Tag getTag(int id) {
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("id", id);
+        return jdbc.queryForObject("select * from tag where id=:id", params, BeanPropertyRowMapper.newInstance(Tag.class));
     }
 
     public List<Tag> getAllTags() {

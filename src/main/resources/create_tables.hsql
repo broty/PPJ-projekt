@@ -48,13 +48,13 @@ CREATE TABLE IF NOT EXISTS tag (
 
 CREATE TABLE IF NOT EXISTS image_has_tag (
   idImage INT NOT NULL,
-  tag_idtag INT NOT NULL,
-  PRIMARY KEY (idImage, tag_idtag),
+  idTag INT NOT NULL,
+  PRIMARY KEY (idImage, idTag),
 );
 ALTER TABLE image_has_tag ADD FOREIGN KEY (idImage) REFERENCES image(id);
 CREATE INDEX fk_image_has_tag_image1_idx ON image_has_tag (idImage);
 
-ALTER TABLE image_has_tag ADD FOREIGN KEY (tag_idtag) REFERENCES tag(id);
-CREATE INDEX fk_image_has_tag_tag1_idx ON image_has_tag (tag_idtag);
+ALTER TABLE image_has_tag ADD FOREIGN KEY (idTag) REFERENCES tag(id);
+CREATE INDEX fk_image_has_tag_tag1_idx ON image_has_tag (idTag);
 
 
