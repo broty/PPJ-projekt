@@ -1,6 +1,8 @@
 package cz.tul.data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Martin on 03.04.2017.
@@ -13,6 +15,10 @@ public class Tag {
     @GeneratedValue
     @Column(name = "id")
     private int id;
+
+    @ManyToMany(mappedBy = "tags")
+    private Set<Image> images = new HashSet<Image>();
+
     private String value;
 
     public Tag() {}
@@ -40,5 +46,13 @@ public class Tag {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public Set<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<Image> images) {
+        this.images = images;
     }
 }

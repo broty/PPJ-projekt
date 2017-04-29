@@ -2,6 +2,8 @@ package cz.tul.data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Martin on 03.04.2017.
@@ -18,6 +20,13 @@ public class Image {
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="Image_Tag",
+            joinColumns={@JoinColumn(name="Image_id")},
+            inverseJoinColumns = {@JoinColumn(name="Tag_id")})
+    private Set<Tag> tags = new HashSet<Tag>();
+
 
     @Column(name = "url")
     private String url;
@@ -94,5 +103,21 @@ public class Image {
 
     public void setDislikes(int dislikes) {
         this.dislikes = dislikes;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<Tag> tags) {
+        this.tags = tags;
     }
 }
