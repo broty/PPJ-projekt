@@ -12,37 +12,40 @@ import java.util.Date;
 public class Image {
     @Id
     @GeneratedValue
-    @Column(name = "idimage")
-    private int idimage;
+    @Column(name = "id")
+    private int id;
 
+    @ManyToOne
+    @JoinColumn(name = "idUser")
+    private User user;
+
+    @Column(name = "url")
     private String url;
     private String name;
-    private Date date_creation;
-    private Date date_edit;
+    private Date dateCreate;
+    private Date dateEdit;
     private int likes;
     private int dislikes;
-    private int user_iduser;
 
     public Image() {
     }
 
-    public Image(String url, String name, Date date_creation,
-                 Date date_edit, int likes, int dislikes, int user_iduser) {
+    public Image(String url, String name, Date dateCreate,
+                 Date dateEdit, int likes, int dislikes, User user) {
         this.url = url;
         this.name = name;
-        this.date_creation = date_creation;
-        this.date_edit = date_edit;
+        this.dateCreate = dateCreate;
+        this.dateEdit = dateEdit;
         this.likes = likes;
         this.dislikes = dislikes;
-        this.user_iduser = user_iduser;
     }
 
-    public int getIdimage() {
-        return idimage;
+    public int getId() {
+        return id;
     }
 
-    public void setIdimage(int idimage) {
-        this.idimage = idimage;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUrl() {
@@ -61,20 +64,20 @@ public class Image {
         this.name = name;
     }
 
-    public Date getDate_creation() {
-        return date_creation;
+    public Date getDateCreate() {
+        return dateCreate;
     }
 
-    public void setDate_creation(Date date_creation) {
-        this.date_creation = date_creation;
+    public void setDateCreate(Date dateCreate) {
+        this.dateCreate = dateCreate;
     }
 
-    public Date getDate_edit() {
-        return date_edit;
+    public Date getDateEdit() {
+        return dateEdit;
     }
 
-    public void setDate_edit(Date date_edit) {
-        this.date_edit = date_edit;
+    public void setDateEdit(Date dateEdit) {
+        this.dateEdit = dateEdit;
     }
 
     public int getLikes() {
@@ -91,13 +94,5 @@ public class Image {
 
     public void setDislikes(int dislikes) {
         this.dislikes = dislikes;
-    }
-
-    public int getUser_iduser() {
-        return user_iduser;
-    }
-
-    public void setUser_iduser(int user_iduser) {
-        this.user_iduser = user_iduser;
     }
 }

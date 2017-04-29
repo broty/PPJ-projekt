@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -36,31 +37,37 @@ public class CommentsDaoTests {
     @Autowired
     private ImagesDao imagesDao;
 
-    private User user1 = new User(new Date(), "Macho1");
-    private User user2 = new User(new Date(), "Macho2");
-    private User user3 = new User(new Date(), "Macho3");
-    private User user4 = new User(new Date(), "Macho4");
+    private User user1;
+    private User user2;
+    private User user3;
+    private User user4;
 
-    private Image image1 = new Image("file:///d:/obrazky/obr1.png", "Obrazek1", new Date(), new Date(), 0, 0, 1);
-    private Image image2 = new Image("file:///d:/obrazky/obr2.png", "Obrazek2", new Date(), new Date(), 0, 0, 2);
-    private Image image3 = new Image("file:///d:/obrazky/obr3.png", "Obrazek3", new Date(), new Date(), 0, 0, 3);
-    private Image image4 = new Image("file:///d:/obrazky/obr4.png", "Obrazek4", new Date(), new Date(), 0, 0, 4);
+    private Image image1;
+    private Image image2;
+    private Image image3;
+    private Image image4;
 
-    private Comment comment1 = new Comment("Blabla1", new Date(), new Date(), 0, 0, 1, 4);
-    private Comment comment2 = new Comment("Blabla2", new Date(), new Date(), 1, 1, 2, 3);
-    private Comment comment3 = new Comment("Blabla3", new Date(), new Date(), 2, 2, 3, 2);
-    private Comment comment4 = new Comment("Blabla4", new Date(), new Date(), 3, 3, 4, 1);
+    private Comment comment1;
+    private Comment comment2;
+    private Comment comment3;
+    private Comment comment4;
 
 
     @Before
     public void init() {
-        usersDao.deleteUsers();
-        imagesDao.deleteImages();
         commentsDao.deleteComments();
+        imagesDao.deleteImages();
+        usersDao.deleteUsers();
+
+        prepareTestData();
     }
 
-    @Test
-    public void testComments() {
+    private void prepareTestData() {
+        user1 = new User(new Date(), "Macho11");
+        user2 = new User(new Date(), "Macho22");
+        user3 = new User(new Date(), "Macho33");
+        user4 = new User(new Date(), "Macho44");
+
         // create users
         usersDao.create(user1);
         usersDao.create(user2);
@@ -68,20 +75,35 @@ public class CommentsDaoTests {
         usersDao.create(user4);
 
         // create images
+        image1 = new Image("file:///d:/obrazky/obr1.png", "Obrazek1", new Date(), new Date(), 0, 0, user1);
+        image2 = new Image("file:///d:/obrazky/obr2.png", "Obrazek2", new Date(), new Date(), 0, 0, user2);
+        image3 = new Image("file:///d:/obrazky/obr3.png", "Obrazek3", new Date(), new Date(), 0, 0, user3);
+        image4 = new Image("file:///d:/obrazky/obr4.png", "Obrazek4", new Date(), new Date(), 0, 0, user4);
+
         imagesDao.create(image1);
         imagesDao.create(image2);
         imagesDao.create(image3);
         imagesDao.create(image4);
 
+        // prepare comments
+        comment1 = new Comment("Blabla1", new Date(), new Date(), 0, 0, image1, user4);
+        comment2 = new Comment("Blabla2", new Date(), new Date(), 1, 1, image2, user3);
+        comment3 = new Comment("Blabla3", new Date(), new Date(), 2, 2, image3, user2);
+        comment4 = new Comment("Blabla4", new Date(), new Date(), 3, 3, image4, user1);
+    }
+
+    @Test
+    public void testComments() {
         // test create comment
 
         commentsDao.create(comment1);
+        int id = comment1.getId();
 
         List<Comment> comments1 = commentsDao.getAllComments();
 
         assertEquals("One comment should have been created and retrieved", 1, comments1.size());
 
-        assertEquals("Inserted comment should match retrieved", comment1.getText(), comments1.get(0).getText());
+        assertEquals("Inserted comment should match retrieved", comment1.getText(), commentsDao.getComment(id).getText());
 
         commentsDao.create(comment2);
         commentsDao.create(comment3);
@@ -90,32 +112,24 @@ public class CommentsDaoTests {
         List<Comment> comments2 = commentsDao.getAllComments();
         assertEquals("Should be four retrieved comments.", 4, comments2.size());
 
-        // test like
+        // test edit
 
-        int likes1 = comments1.get(0).getLikes();
-        commentsDao.lajk(comments1.get(0).getIdcomment());
+        Comment comment = commentsDao.getComment(id);
 
-        assertTrue("Comment should have incremented likes", likes1 < commentsDao.getLajks(comments2.get(0).getIdcomment()));
+        int likes = comment.getLikes();
+        int dislikes = comment.getDislikes();
+        String text = comment.getText();
+        Date dateEdit = comment.getDateEdit();
 
-        // test dislike
+        comment.setLikes(likes+1);
+        comment.setDislikes(likes+1);
+        comment.setText("New text");
 
-        int dislikes1 = comments1.get(0).getDislikes();
-        commentsDao.dislajk(comments1.get(0).getIdcomment());
-
-        assertTrue("Comment should have incremented dislikes", dislikes1 < commentsDao.getDislajks(comments2.get(0).getIdcomment()));
-
-        // test edit text
-        int id = comments2.get(2).getIdcomment();
-        String text1 = commentsDao.getText(id);
-        String editDate1 = commentsDao.getDateEdit(id);
-
-        commentsDao.editComment(id,"New new new new new bla bla bla bla");
-
-        String text2 = commentsDao.getText(id);
-        String editDate2 = commentsDao.getDateEdit(id);
-
-        assertTrue("Failed to change image URL.", text1 != text2);
-        assertTrue("Edit date should change after URL update", editDate1 != editDate2);
-
+        commentsDao.update(comment);
+        Comment commentUpdated = commentsDao.getComment(id);
+        assertTrue("Likes should have been incremented", likes < commentUpdated.getLikes());
+        assertTrue("Dislikes should have been incremented", dislikes < commentUpdated.getDislikes());
+        assertTrue("Text of comment should have been changed", text != commentUpdated.getText());
+        assertNotEquals("Date of edit should have been updated", dateEdit, commentUpdated.getDateEdit());
     }
 }

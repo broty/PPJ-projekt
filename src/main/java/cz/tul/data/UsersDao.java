@@ -25,13 +25,11 @@ public class UsersDao {
         session().save(user);
     }
 
-   public boolean exists(String name) {
-       Criteria crit = session().createCriteria(User.class);
-       crit.add(Restrictions.like("name", name));
-       User user = (User) crit.uniqueResult();
-       return user != null;
+    public User getUser(int id) {
+        Criteria crit = session().createCriteria(User.class);
+        crit.add(Restrictions.eq("id", id));
+        return (User) crit.uniqueResult();
     }
-
 
     public List<User> getAllUsers() {
         Criteria crit = session().createCriteria(User.class);
@@ -39,7 +37,6 @@ public class UsersDao {
     }
 
     public void deleteUsers() {
-        //jdbc.getJdbcOperations().execute("DELETE FROM users");
         session().createQuery("delete from User").executeUpdate();
     }
 }

@@ -13,11 +13,11 @@ public class User {
 
     @Id
     @GeneratedValue
-    @Column(name = "iduser")
-    private int iduser;
+    @Column(name = "id")
+    private int id;
 
-    @Column(name = "date_creation")
-    private Date date_creation;
+    @Column(name = "dateCreate")
+    private Date dateCreate;
 
     @Column(name = "name")
     private String name;
@@ -28,31 +28,31 @@ public class User {
 
 
     
-    public User(Date date_creation, String name) {
-        this.date_creation = date_creation;
+    public User(Date dateCreate, String name) {
+        this.dateCreate = dateCreate;
         this.name = name;
     }
 
-    public User(int iduser, Date date_creation, String name) {
-        this.iduser = iduser;
-        this.date_creation = date_creation;
+    public User(int id, Date dateCreate, String name) {
+        this.id = id;
+        this.dateCreate = dateCreate;
         this.name = name;
     }
 
-    public int getIduser() {
-        return iduser;
+    public int getId() {
+        return id;
     }
 
-    public void setIduser(int iduser) {
-        this.iduser = iduser;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Date getDate_creation() {
-        return date_creation;
+    public Date getDateCreate() {
+        return dateCreate;
     }
 
-    public void setDate_creation(Date date_creation) {
-        this.date_creation = date_creation;
+    public void setDateCreate(Date dateCreate) {
+        this.dateCreate = dateCreate;
     }
 
     public String getName() {

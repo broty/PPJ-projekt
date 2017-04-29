@@ -11,8 +11,8 @@ import javax.persistence.*;
 public class Tag {
     @Id
     @GeneratedValue
-    @Column(name = "idtag")
-    private int idtag;
+    @Column(name = "id")
+    private int id;
     private String value;
 
     public Tag() {}
@@ -21,17 +21,17 @@ public class Tag {
         this.value = value;
     }
 
-    public Tag(int idtag, String value) {
-        this.idtag = idtag;
+    public Tag(int id, String value) {
+        this.id = id;
         this.value = value;
     }
 
-    public int getIdtag() {
-        return idtag;
+    public int getId() {
+        return id;
     }
 
-    public void setIdtag(int idtag) {
-        this.idtag = idtag;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getValue() {
