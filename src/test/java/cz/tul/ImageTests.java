@@ -1,6 +1,9 @@
 package cz.tul;
 
 import cz.tul.data.*;
+import cz.tul.service.CommentService;
+import cz.tul.service.ImageService;
+import cz.tul.service.UserService;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -27,15 +30,15 @@ import static org.junit.Assert.assertTrue;
 @ActiveProfiles({"test"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class ImagesDaoTests {
+public class ImageTests {
     @Autowired
-    private ImagesDao imagesDao;
+    private ImageService imageService;
 
     @Autowired
-    private UsersDao usersDao;
+    private UserService userService;
 
     @Autowired
-    private CommentsDao commentsDao;
+    private CommentService commentService;
 
     private User user1;
     private User user2;
@@ -50,9 +53,9 @@ public class ImagesDaoTests {
 
     @Before
     public void init() {
-        commentsDao.deleteComments();
-        imagesDao.deleteImages();
-        usersDao.deleteUsers();
+        commentService.deleteComments();
+        imageService.deleteImages();
+        userService.deleteUsers();
 
         prepareTestData();
     }
@@ -64,10 +67,10 @@ public class ImagesDaoTests {
         user4 = new User(new Date(), "Macho4");
 
         // create users
-        usersDao.create(user1);
-        usersDao.create(user2);
-        usersDao.create(user3);
-        usersDao.create(user4);
+        userService.create(user1);
+        userService.create(user2);
+        userService.create(user3);
+        userService.create(user4);
 
         // prepare images
         image1 = new Image("file:///d:/obrazky/obr1.png", "Obrazek1", new Date(), new Date(), 0, 0, user1);
@@ -79,45 +82,45 @@ public class ImagesDaoTests {
     @Test
     public void testImages() {
         // create and test 1 image
-        imagesDao.create(image1);
+        imageService.create(image1);
 
-        List<Image> images1 = imagesDao.getAllImages();
+        List<Image> images1 = imageService.getAllImages();
 
         assertEquals("One image should have been created and retrieved", 1, images1.size());
 
-        assertEquals("Inserted image should match retrieved", image1.getName(), imagesDao.getImage(image1.getId()).getName());
+        assertEquals("Inserted image should match retrieved", image1.getName(), imageService.getImage(image1.getId()).getName());
 
         // create and test 3 more images
-        imagesDao.create(image2);
-        imagesDao.create(image3);
-        imagesDao.create(image4);
+        imageService.create(image2);
+        imageService.create(image3);
+        imageService.create(image4);
 
-        List<Image> images2 = imagesDao.getAllImages();
+        List<Image> images2 = imageService.getAllImages();
         assertEquals("Should be four retrieved images.", 4, images2.size());
 
         Image img;
         // test like
 
-        img = imagesDao.getImage(image1.getId());
+        img = imageService.getImage(image1.getId());
         int oldValue = img.getLikes();
 
         img.setLikes(img.getLikes()+1);
-        imagesDao.update(img);
+        imageService.update(img);
 
-        assertTrue("Image should have incremented likes.", oldValue < imagesDao.getImage(image1.getId()).getLikes());
+        assertTrue("Image should have incremented likes.", oldValue < imageService.getImage(image1.getId()).getLikes());
 
         // test dislike
 
-        img = imagesDao.getImage(image1.getId());
+        img = imageService.getImage(image1.getId());
         oldValue = img.getDislikes();
         img.setDislikes(img.getDislikes()+1);
-        imagesDao.update(img);
+        imageService.update(img);
 
-        assertTrue("Image should have incremented dislikes.", oldValue < imagesDao.getImage(image1.getId()).getDislikes());
+        assertTrue("Image should have incremented dislikes.", oldValue < imageService.getImage(image1.getId()).getDislikes());
 
 
         // test edit name, edit url
-        img = imagesDao.getImage(image1.getId());
+        img = imageService.getImage(image1.getId());
         String oldName = img.getName();
         String oldUrl = img.getUrl();
         Date dateEdit = img.getDateEdit();
@@ -125,10 +128,10 @@ public class ImagesDaoTests {
         img.setName("Some new name");
         img.setUrl("http://some.test/url");
 
-        imagesDao.update(img);
+        imageService.update(img);
 
-        assertTrue("Image name should have been updated.", oldName != imagesDao.getImage(image1.getId()).getName());
-        assertTrue("Image URL should have been updated", oldUrl != imagesDao.getImage(image1.getId()).getUrl());
-        assertNotEquals("Date of edit should have been updated", dateEdit, imagesDao.getImage(image1.getId()).getDateEdit());
+        assertTrue("Image name should have been updated.", oldName != imageService.getImage(image1.getId()).getName());
+        assertTrue("Image URL should have been updated", oldUrl != imageService.getImage(image1.getId()).getUrl());
+        assertNotEquals("Date of edit should have been updated", dateEdit, imageService.getImage(image1.getId()).getDateEdit());
     }
 }

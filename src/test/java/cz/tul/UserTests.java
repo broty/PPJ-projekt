@@ -1,9 +1,7 @@
 package cz.tul;
 
-import cz.tul.data.CommentsDao;
-import cz.tul.data.ImagesDao;
 import cz.tul.data.User;
-import cz.tul.data.UsersDao;
+import cz.tul.service.UserService;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -28,15 +26,9 @@ import static org.junit.Assert.assertEquals;
 @ActiveProfiles({"test"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class UsersDaoTests {
+public class UserTests {
     @Autowired
-    private ImagesDao imagesDao;
-
-    @Autowired
-    private UsersDao usersDao;
-
-    @Autowired
-    private CommentsDao commentsDao;
+    private UserService userService;
 
     private User user1 = new User(new Date(), "Macho1");
     private User user2 = new User(new Date(), "Macho2");
@@ -46,28 +38,26 @@ public class UsersDaoTests {
 
     @Before
     public void init() {
-        commentsDao.deleteComments();
-        imagesDao.deleteImages();
-        usersDao.deleteUsers();
+        userService.deleteUsers();
     }
 
     @Test
     public void testUsers() {
 
-        usersDao.create(user1);
+        userService.create(user1);
         int id = user1.getId();
 
-        List<User> users1 = usersDao.getAllUsers();
+        List<User> users1 = userService.getAllUsers();
 
         assertEquals("One user should have been created and retrieved", 1, users1.size());
 
-        assertEquals("Inserted user should match retrieved", user1.getName(), usersDao.getUser(id).getName());
+        assertEquals("Inserted user should match retrieved", user1.getName(), userService.getUser(id).getName());
 
-        usersDao.create(user2);
-        usersDao.create(user3);
-        usersDao.create(user4);
+        userService.create(user2);
+        userService.create(user3);
+        userService.create(user4);
 
-        List<User> users2 = usersDao.getAllUsers();
+        List<User> users2 = userService.getAllUsers();
 
         assertEquals("Should be four retrieved users.", 4, users2.size());
     }

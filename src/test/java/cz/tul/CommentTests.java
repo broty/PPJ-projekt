@@ -1,6 +1,9 @@
 package cz.tul;
 
 import cz.tul.data.*;
+import cz.tul.service.CommentService;
+import cz.tul.service.ImageService;
+import cz.tul.service.UserService;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -27,15 +30,15 @@ import static org.junit.Assert.assertTrue;
 @ActiveProfiles({"test"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class CommentsDaoTests {
+public class CommentTests {
     @Autowired
-    private CommentsDao commentsDao;
+    private CommentService commentService;
 
     @Autowired
-    private UsersDao usersDao;
+    private UserService userService;
 
     @Autowired
-    private ImagesDao imagesDao;
+    private ImageService imageService;
 
     private User user1;
     private User user2;
@@ -55,9 +58,9 @@ public class CommentsDaoTests {
 
     @Before
     public void init() {
-        commentsDao.deleteComments();
-        imagesDao.deleteImages();
-        usersDao.deleteUsers();
+        commentService.deleteComments();
+        imageService.deleteImages();
+        userService.deleteUsers();
 
         prepareTestData();
     }
@@ -69,10 +72,10 @@ public class CommentsDaoTests {
         user4 = new User(new Date(), "Macho44");
 
         // create users
-        usersDao.create(user1);
-        usersDao.create(user2);
-        usersDao.create(user3);
-        usersDao.create(user4);
+        userService.create(user1);
+        userService.create(user2);
+        userService.create(user3);
+        userService.create(user4);
 
         // create images
         image1 = new Image("file:///d:/obrazky/obr1.png", "Obrazek1", new Date(), new Date(), 0, 0, user1);
@@ -80,10 +83,10 @@ public class CommentsDaoTests {
         image3 = new Image("file:///d:/obrazky/obr3.png", "Obrazek3", new Date(), new Date(), 0, 0, user3);
         image4 = new Image("file:///d:/obrazky/obr4.png", "Obrazek4", new Date(), new Date(), 0, 0, user4);
 
-        imagesDao.create(image1);
-        imagesDao.create(image2);
-        imagesDao.create(image3);
-        imagesDao.create(image4);
+        imageService.create(image1);
+        imageService.create(image2);
+        imageService.create(image3);
+        imageService.create(image4);
 
         // prepare comments
         comment1 = new Comment("Blabla1", new Date(), new Date(), 0, 0, image1, user4);
@@ -96,25 +99,25 @@ public class CommentsDaoTests {
     public void testComments() {
         // test create comment
 
-        commentsDao.create(comment1);
+        commentService.create(comment1);
         int id = comment1.getId();
 
-        List<Comment> comments1 = commentsDao.getAllComments();
+        List<Comment> comments1 = commentService.getAllComments();
 
         assertEquals("One comment should have been created and retrieved", 1, comments1.size());
 
-        assertEquals("Inserted comment should match retrieved", comment1.getText(), commentsDao.getComment(id).getText());
+        assertEquals("Inserted comment should match retrieved", comment1.getText(), commentService.getComment(id).getText());
 
-        commentsDao.create(comment2);
-        commentsDao.create(comment3);
-        commentsDao.create(comment4);
+        commentService.create(comment2);
+        commentService.create(comment3);
+        commentService.create(comment4);
 
-        List<Comment> comments2 = commentsDao.getAllComments();
+        List<Comment> comments2 = commentService.getAllComments();
         assertEquals("Should be four retrieved comments.", 4, comments2.size());
 
         // test edit
 
-        Comment comment = commentsDao.getComment(id);
+        Comment comment = commentService.getComment(id);
 
         int likes = comment.getLikes();
         int dislikes = comment.getDislikes();
@@ -125,8 +128,8 @@ public class CommentsDaoTests {
         comment.setDislikes(likes+1);
         comment.setText("New text");
 
-        commentsDao.update(comment);
-        Comment commentUpdated = commentsDao.getComment(id);
+        commentService.update(comment);
+        Comment commentUpdated = commentService.getComment(id);
         assertTrue("Likes should have been incremented", likes < commentUpdated.getLikes());
         assertTrue("Dislikes should have been incremented", dislikes < commentUpdated.getDislikes());
         assertTrue("Text of comment should have been changed", text != commentUpdated.getText());

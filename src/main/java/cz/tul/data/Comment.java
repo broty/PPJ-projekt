@@ -29,14 +29,12 @@ public class Comment {
     private Date dateEdit;
     private int likes;
     private int dislikes;
-//    private int idImage;
-//    private int idUser;
 
     public Comment() {
     }
 
     public Comment(String text, Date dateCreate, Date dateEdit, int likes,
-                   int dislikes, /*int idImage, int idUser*/ Image image, User user) {
+                   int dislikes, Image image, User user) {
         this.text = text;
         this.dateCreate = dateCreate;
         this.dateEdit = dateEdit;
@@ -44,8 +42,6 @@ public class Comment {
         this.dislikes = dislikes;
         this.image = image;
         this.user = user;
-//        this.idImage = idImage;
-//        this.idUser = idUser;
     }
 
     public int getId() {
@@ -95,20 +91,4 @@ public class Comment {
     public void setDislikes(int dislikes) {
         this.dislikes = dislikes;
     }
-
-   /* public int getIdImage() {
-        return idImage;
-    }
-
-    public void setIdImage(int idImage) {
-        this.idImage = idImage;
-    }
-
-    public int getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }*/
 }

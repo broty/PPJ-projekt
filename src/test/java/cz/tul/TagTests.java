@@ -1,6 +1,9 @@
 package cz.tul;
 
 import cz.tul.data.*;
+import cz.tul.service.ImageService;
+import cz.tul.service.TagService;
+import cz.tul.service.UserService;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -27,15 +30,15 @@ import static org.junit.Assert.assertEquals;
 @ActiveProfiles({"test"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
-public class TagsDaoTests {
+public class TagTests {
     @Autowired
-    private TagsDao tagsDao;
+    private TagService tagService;
 
     @Autowired
-    private ImagesDao imagesDao;
+    private ImageService imageService;
 
     @Autowired
-    private UsersDao usersDao;
+    private UserService userService;
 
     private User user1;
     private User user2;
@@ -48,9 +51,9 @@ public class TagsDaoTests {
 
     @Before
     public void init() {
-        imagesDao.deleteImages();
-        tagsDao.deleteTags();
-        usersDao.deleteUsers();
+        imageService.deleteImages();
+        tagService.deleteTags();
+        userService.deleteUsers();
         prepareTestData();
     }
 
@@ -58,30 +61,30 @@ public class TagsDaoTests {
         // create users
         user1 = new User(new Date(), "Macho1");
         user2 = new User(new Date(), "Macho2");
-        usersDao.create(user1);
-        usersDao.create(user2);
+        userService.create(user1);
+        userService.create(user2);
 
         // create images
         image1 = new Image("file:///d:/obrazky/obr1.png", "Obrazek1", new Date(), new Date(), 0, 0, user1);
         image2 = new Image("file:///d:/obrazky/obr2.png", "Obrazek2", new Date(), new Date(), 0, 0, user2);
-        imagesDao.create(image1);
-        imagesDao.create(image2);
+        imageService.create(image1);
+        imageService.create(image2);
     }
 
     @Test
     public void testTags() {
 
-        tagsDao.create(tag1);
+        tagService.create(tag1);
 
-        List<Tag> tags1 = tagsDao.getAllTags();
+        List<Tag> tags1 = tagService.getAllTags();
 
         assertEquals("One tag should have been created and retrieved", 1, tags1.size());
 
         assertEquals("Inserted tag should match retrieved", tag1.getValue(), tags1.get(0).getValue());
 
-        tagsDao.create(tag2);
+        tagService.create(tag2);
 
-        List<Tag> tags2 = tagsDao.getAllTags();
+        List<Tag> tags2 = tagService.getAllTags();
 
         assertEquals("Should be two retrieved tags.", 2, tags2.size());
 
