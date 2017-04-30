@@ -15,9 +15,9 @@ CREATE TABLE IF NOT EXISTS image (
   dislikes INT NULL,
   idUser INT NOT NULL,
   PRIMARY KEY (id),
+  CONSTRAINT FK_Image_User FOREIGN KEY (idUser)
+    REFERENCES user(id)
 );
-ALTER TABLE image ADD FOREIGN KEY (idUser) REFERENCES user(id);
-CREATE INDEX fk_image_user1_idx ON image (idUser);
 
 
 CREATE TABLE IF NOT EXISTS comment (
@@ -30,12 +30,17 @@ CREATE TABLE IF NOT EXISTS comment (
   idUser INT NOT NULL,
   idImage INT NOT NULL,
   PRIMARY KEY (id),
-);
-ALTER TABLE comment ADD FOREIGN KEY (idUser) REFERENCES user(id);
-CREATE INDEX fk_comment_user1_idx ON comment (idUser);
+  CONSTRAINT FK_Comment_User FOREIGN KEY (idUser)
+    REFERENCES user(id),
 
-ALTER TABLE comment ADD FOREIGN KEY (idImage) REFERENCES image(id);
-CREATE INDEX fk_comment_image1_idx ON comment (idImage);
+  CONSTRAINT FK_Comment_Image FOREIGN KEY (idImage)
+    REFERENCES image(id)
+);
+--ALTER TABLE comment ADD FOREIGN KEY (idUser) REFERENCES user(id);
+--CREATE INDEX fk_comment_user1_idx ON comment (idUser);
+
+--ALTER TABLE comment ADD FOREIGN KEY (idImage) REFERENCES image(id);
+--CREATE INDEX fk_comment_image1_idx ON comment (idImage);
 
 
 
@@ -46,13 +51,17 @@ CREATE TABLE IF NOT EXISTS tag (
   PRIMARY KEY (id));
 
 
-CREATE TABLE IF NOT EXISTS image_has_tag (
-  idImage INT NOT NULL,
-  tag_idtag INT NOT NULL,
-  PRIMARY KEY (idImage, tag_idtag),
+CREATE TABLE IF NOT EXISTS Image_Tag (
+  Image_id INT NOT NULL,
+  Tag_id INT NOT NULL,
+  PRIMARY KEY (Image_id, Tag_id),
+  CONSTRAINT FK_ImageTag_Image FOREIGN KEY (Image_id)
+    REFERENCES image(id),
+  CONSTRAINT FK_ImageTag_Tag FOREIGN KEY (Tag_id)
+    REFERENCES tag(id)
 );
-ALTER TABLE image_has_tag ADD FOREIGN KEY (idImage) REFERENCES image(id);
-CREATE INDEX fk_image_has_tag_image1_idx ON image_has_tag (idImage);
+--ALTER TABLE image_has_tag ADD FOREIGN KEY (idImage) REFERENCES image(id);
+--CREATE INDEX fk_image_has_tag_image1_idx ON image_has_tag (idImage);
 
-ALTER TABLE image_has_tag ADD FOREIGN KEY (tag_idtag) REFERENCES tag(id);
-CREATE INDEX fk_image_has_tag_tag1_idx ON image_has_tag (tag_idtag);
+--ALTER TABLE image_has_tag ADD FOREIGN KEY (tag_idtag) REFERENCES tag(id);
+--CREATE INDEX fk_image_has_tag_tag1_idx ON image_has_tag (tag_idtag);
