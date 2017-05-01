@@ -57,7 +57,6 @@ public class ImagesDao {
    }
 
     public boolean update(Image image) {
-        image.setDateEdit(new Date());
         BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(
                 image);
 
@@ -65,6 +64,13 @@ public class ImagesDao {
                 ", dateEdit=:dateEdit, likes=:likes, dislikes=:dislikes " +
                 ", idUser=:idUser" +
                 " where id=:id", params) == 1;
+    }
+
+    public void update(Image image, boolean updateDateEdit) {
+        if (updateDateEdit) {
+            image.setDateEdit(new Date());
+        }
+        update(image);
     }
 
     public void deleteImages() {

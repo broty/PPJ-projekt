@@ -54,7 +54,7 @@ public class UsersDaoTests {
     }
 
     @Test
-    public void testUsers() {
+    public void testCreateRetrieveUsers() {
 
         usersDao.create(user1);
         int id = (int)usersDao.getLastKey();

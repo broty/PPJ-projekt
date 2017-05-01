@@ -41,7 +41,7 @@ public class TagsDaoTests {
     }
 
     @Test
-    public void testTags() {
+    public void testCreateRetrieveTag() {
 
         tagsDao.create(tag1);
 

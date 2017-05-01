@@ -60,13 +60,19 @@ public class CommentsDao {
     }
 
     public boolean update(Comment comment) {
-        comment.setDateEdit(new Date());
         BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(
                 comment);
 
         return jdbc.update("update comment set text=:text, dateCreate=:dateCreate, dateEdit=:dateEdit" +
                 ", likes=:likes, dislikes=:dislikes, idImage=:idImage, idUser=:idUser" +
                 " where id=:id", params) == 1;
+    }
+
+    public void update(Comment comment, boolean updateDateEdit) {
+        if (updateDateEdit) {
+            comment.setDateEdit(new Date());
+        }
+        update(comment);
     }
 
     public void deleteComments() {
