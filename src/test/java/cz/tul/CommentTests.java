@@ -141,11 +141,11 @@ public class CommentTests {
         int dislikes = comment.getDislikes();
         Date dateEdit = comment.getDateEdit();
 
-        comment.setLikes(dislikes+1);
+        comment.setDislikes(dislikes+1);
         commentService.update(comment);
 
         Comment commentUpdated = commentService.getComment(id);
-        assertTrue("Dislikes should have been incremented", dislikes < commentUpdated.getLikes());
+        assertTrue("Dislikes should have been incremented", dislikes < commentUpdated.getDislikes());
         assertEquals("Date of edit should have NOT been updated", dateEdit, commentUpdated.getDateEdit());
     }
 
