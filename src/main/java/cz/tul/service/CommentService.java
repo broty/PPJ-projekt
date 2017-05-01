@@ -29,8 +29,14 @@ public class CommentService {
     }
 
     public void update(Comment comment) {
-        comment.setDateEdit(new Date());
         commentRepository.save(comment);
+    }
+
+    public void update(Comment comment, boolean updateDateEdit) {
+        if (updateDateEdit) {
+            comment.setDateEdit(new Date());
+        }
+        update(comment);
     }
 
     public void deleteComments() {

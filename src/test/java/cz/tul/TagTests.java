@@ -72,8 +72,7 @@ public class TagTests {
     }
 
     @Test
-    public void testTags() {
-
+    public void testCreateRetrieveTag() {
         tagService.create(tag1);
 
         List<Tag> tags1 = tagService.getAllTags();
@@ -87,15 +86,18 @@ public class TagTests {
         List<Tag> tags2 = tagService.getAllTags();
 
         assertEquals("Should be two retrieved tags.", 2, tags2.size());
+    }
 
+    @Test
+    public void testTagJoinImage() {
         // test M:N relation of TAG and IMAGE
         // joinTable name = Image_Tag
-        Set<Tag> tags = new HashSet<Tag>();
+        Set<Tag> tags = new HashSet<>();
             tags.add(tag1);
             tags.add(tag2);
         image1.setTags(tags);
 
-        Set<Image> images = new HashSet<Image>();
+        Set<Image> images = new HashSet<>();
             images.add(image1);
             images.add(image2);
         tag1.setImages(images);

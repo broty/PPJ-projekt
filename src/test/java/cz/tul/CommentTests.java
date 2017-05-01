@@ -96,9 +96,7 @@ public class CommentTests {
     }
 
     @Test
-    public void testComments() {
-        // test create comment
-
+    public void testCreateRetrieveComment() {
         commentService.create(comment1);
         int id = comment1.getId();
 
@@ -115,23 +113,56 @@ public class CommentTests {
         List<Comment> comments2 = commentService.getAllComments();
         assertEquals("Should be four retrieved comments.", 4, comments2.size());
 
-        // test edit
+    }
+
+    @Test
+    public void testLikeComment() {
+        commentService.create(comment1);
+        int id = comment1.getId();
 
         Comment comment = commentService.getComment(id);
-
         int likes = comment.getLikes();
-        int dislikes = comment.getDislikes();
-        String text = comment.getText();
         Date dateEdit = comment.getDateEdit();
 
         comment.setLikes(likes+1);
-        comment.setDislikes(likes+1);
-        comment.setText("New text");
-
         commentService.update(comment);
+
         Comment commentUpdated = commentService.getComment(id);
         assertTrue("Likes should have been incremented", likes < commentUpdated.getLikes());
-        assertTrue("Dislikes should have been incremented", dislikes < commentUpdated.getDislikes());
+        assertEquals("Date of edit should have NOT been updated", dateEdit, commentUpdated.getDateEdit());
+    }
+
+    @Test
+    public void testDislikeComment() {
+        commentService.create(comment1);
+        int id = comment1.getId();
+
+        Comment comment = commentService.getComment(id);
+        int dislikes = comment.getDislikes();
+        Date dateEdit = comment.getDateEdit();
+
+        comment.setLikes(dislikes+1);
+        commentService.update(comment);
+
+        Comment commentUpdated = commentService.getComment(id);
+        assertTrue("Dislikes should have been incremented", dislikes < commentUpdated.getLikes());
+        assertEquals("Date of edit should have NOT been updated", dateEdit, commentUpdated.getDateEdit());
+    }
+
+    @Test
+    public void testEditComment() {
+        commentService.create(comment1);
+        int id = comment1.getId();
+
+        Comment comment = commentService.getComment(id);
+
+        String text = comment.getText();
+        Date dateEdit = comment.getDateEdit();
+        comment.setText("New text");
+
+        commentService.update(comment, true);
+        Comment commentUpdated = commentService.getComment(id);
+
         assertTrue("Text of comment should have been changed", text != commentUpdated.getText());
         assertNotEquals("Date of edit should have been updated", dateEdit, commentUpdated.getDateEdit());
     }

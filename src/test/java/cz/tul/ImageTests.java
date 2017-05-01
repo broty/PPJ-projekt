@@ -50,7 +50,6 @@ public class ImageTests {
     private Image image3;
     private Image image4;
 
-
     @Before
     public void init() {
         commentService.deleteComments();
@@ -80,7 +79,7 @@ public class ImageTests {
     }
 
     @Test
-    public void testImages() {
+    public void testCreateRetrieveImage() {
         // create and test 1 image
         imageService.create(image1);
 
@@ -97,40 +96,63 @@ public class ImageTests {
 
         List<Image> images2 = imageService.getAllImages();
         assertEquals("Should be four retrieved images.", 4, images2.size());
+    }
 
-        Image img;
-        // test like
-
-        img = imageService.getImage(image1.getId());
+    @Test
+    public void testLikeImage() {
+        imageService.create(image1);
+        Image img = imageService.getImage(image1.getId());
         int oldValue = img.getLikes();
+        Date dateEdit = img.getDateEdit();
 
-        img.setLikes(img.getLikes()+1);
+        img.setLikes(img.getLikes() + 1);
         imageService.update(img);
 
         assertTrue("Image should have incremented likes.", oldValue < imageService.getImage(image1.getId()).getLikes());
+        assertEquals("Date of edit should have NOT been updated", dateEdit, imageService.getImage(image1.getId()).getDateEdit());
+    }
 
-        // test dislike
+    @Test
+    public void testDislikeImage() {
+        imageService.create(image1);
+        Image img = imageService.getImage(image1.getId());
+        int oldValue = img.getDislikes();
+        Date dateEdit = img.getDateEdit();
 
-        img = imageService.getImage(image1.getId());
-        oldValue = img.getDislikes();
-        img.setDislikes(img.getDislikes()+1);
+        img.setDislikes(img.getDislikes() + 1);
         imageService.update(img);
 
         assertTrue("Image should have incremented dislikes.", oldValue < imageService.getImage(image1.getId()).getDislikes());
-
-
-        // test edit name, edit url
+        assertEquals("Date of edit should have NOT been updated", dateEdit, imageService.getImage(image1.getId()).getDateEdit());
+    }
+    @Test
+    public void testEditName() {
+        imageService.create(image1);
+        Image img;
         img = imageService.getImage(image1.getId());
         String oldName = img.getName();
-        String oldUrl = img.getUrl();
         Date dateEdit = img.getDateEdit();
 
         img.setName("Some new name");
-        img.setUrl("http://some.test/url");
 
-        imageService.update(img);
+        imageService.update(img, true);
 
         assertTrue("Image name should have been updated.", oldName != imageService.getImage(image1.getId()).getName());
+        assertNotEquals("Date of edit should have been updated", dateEdit, imageService.getImage(image1.getId()).getDateEdit());
+    }
+
+    @Test
+    public void testEditUrl() {
+        imageService.create(image1);
+        Image img;
+        img = imageService.getImage(image1.getId());
+        String oldUrl = img.getUrl();
+        Date dateEdit = img.getDateEdit();
+
+        img.setUrl("http://some.test/url");
+
+        imageService.update(img, true);
+
         assertTrue("Image URL should have been updated", oldUrl != imageService.getImage(image1.getId()).getUrl());
         assertNotEquals("Date of edit should have been updated", dateEdit, imageService.getImage(image1.getId()).getDateEdit());
     }

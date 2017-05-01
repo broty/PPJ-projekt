@@ -42,7 +42,7 @@ public class UserTests {
     }
 
     @Test
-    public void testUsers() {
+    public void testCreateRetrieveUsers() {
 
         userService.create(user1);
         int id = user1.getId();

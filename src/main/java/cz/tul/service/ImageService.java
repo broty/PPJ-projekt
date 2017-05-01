@@ -29,8 +29,14 @@ public class ImageService {
     }
 
     public void update(Image image) {
-        image.setDateEdit(new Date());
         imageRepository.save(image);
+    }
+
+    public void update(Image image, boolean updateDateEdit) {
+        if (updateDateEdit) {
+            image.setDateEdit(new Date());
+        }
+        update(image);
     }
 
     public void deleteImages() {
