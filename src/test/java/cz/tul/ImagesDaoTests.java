@@ -77,8 +77,7 @@ public class ImagesDaoTests {
     }
 
     @Test
-    public void testImages() {
-        // create and test 1 image
+    public void testCreateRetrieveImages() {
         imagesDao.create(image1);
 
         List<Image> images1 = imagesDao.getAllImages();
@@ -94,40 +93,63 @@ public class ImagesDaoTests {
 
         List<Image> images2 = imagesDao.getAllImages();
         assertEquals("Should be four retrieved images.", 4, images2.size());
+    }
 
-        Image img;
-        // test like
-
-        img = imagesDao.getImage(image1.getId());
+    @Test
+    public void testLikeImage() {
+        imagesDao.create(image1);
+        Image img = imagesDao.getImage(image1.getId());
         int oldValue = img.getLikes();
+        Date dateEdit = img.getDateEdit();
 
         img.setLikes(img.getLikes()+1);
         imagesDao.update(img);
 
         assertTrue("Image should have incremented likes.", oldValue < imagesDao.getImage(image1.getId()).getLikes());
+        assertEquals("Date of edit should have NOT been updated", dateEdit, imagesDao.getImage(image1.getId()).getDateEdit());
+    }
 
-        // test dislike
+    @Test
+    public void testDislikeImage() {
+        imagesDao.create(image1);
+        Image img = imagesDao.getImage(image1.getId());
+        int oldValue = img.getDislikes();
+        Date dateEdit = img.getDateEdit();
 
-        img = imagesDao.getImage(image1.getId());
-        oldValue = img.getDislikes();
-        img.setDislikes(img.getDislikes()+1);
+        img.setDislikes(img.getDislikes() + 1);
         imagesDao.update(img);
 
         assertTrue("Image should have incremented dislikes.", oldValue < imagesDao.getImage(image1.getId()).getDislikes());
-
-
-        // test edit name, edit url
+        assertEquals("Date of edit should have NOT been updated", dateEdit, imagesDao.getImage(image1.getId()).getDateEdit());
+    }
+    @Test
+    public void testEditName() {
+        imagesDao.create(image1);
+        Image img;
         img = imagesDao.getImage(image1.getId());
         String oldName = img.getName();
-        String oldUrl = img.getUrl();
         Date dateEdit = img.getDateEdit();
 
         img.setName("Some new name");
-        img.setUrl("http://some.test/url");
 
-        imagesDao.update(img);
+        imagesDao.update(img, true);
 
         assertTrue("Image name should have been updated.", oldName != imagesDao.getImage(image1.getId()).getName());
+        assertNotEquals("Date of edit should have been updated", dateEdit, imagesDao.getImage(image1.getId()).getDateEdit());
+    }
+
+    @Test
+    public void testEditUrl() {
+        imagesDao.create(image1);
+        Image img;
+        img = imagesDao.getImage(image1.getId());
+        String oldUrl = img.getUrl();
+        Date dateEdit = img.getDateEdit();
+
+        img.setUrl("http://some.test/url");
+
+        imagesDao.update(img, true);
+
         assertTrue("Image URL should have been updated", oldUrl != imagesDao.getImage(image1.getId()).getUrl());
         assertNotEquals("Date of edit should have been updated", dateEdit, imagesDao.getImage(image1.getId()).getDateEdit());
     }

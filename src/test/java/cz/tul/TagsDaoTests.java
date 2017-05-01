@@ -69,8 +69,7 @@ public class TagsDaoTests {
     }
 
     @Test
-    public void testTags() {
-
+    public void testCreateRetrieveTag() {
         tagsDao.create(tag1);
 
         List<Tag> tags1 = tagsDao.getAllTags();
@@ -84,17 +83,20 @@ public class TagsDaoTests {
         List<Tag> tags2 = tagsDao.getAllTags();
 
         assertEquals("Should be two retrieved tags.", 2, tags2.size());
+    }
 
+    @Test
+    public void testTagJoinImage() {
         // test M:N relation of TAG and IMAGE
         // joinTable name = Image_Tag
-        Set<Tag> tags = new HashSet<Tag>();
-            tags.add(tag1);
-            tags.add(tag2);
+        Set<Tag> tags = new HashSet<>();
+        tags.add(tag1);
+        tags.add(tag2);
         image1.setTags(tags);
 
-        Set<Image> images = new HashSet<Image>();
-            images.add(image1);
-            images.add(image2);
+        Set<Image> images = new HashSet<>();
+        images.add(image1);
+        images.add(image2);
         tag1.setImages(images);
 
         assertEquals("Expected to retrieve 2 tags.", 2, image1.getTags().size());

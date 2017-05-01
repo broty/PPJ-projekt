@@ -40,8 +40,14 @@ public class ImagesDao {
     }
 
     public void update(Image image) {
-        image.setDateEdit(new Date());
         session().update(image);
+    }
+
+    public void update(Image image, boolean updateDateEdit) {
+        if (updateDateEdit) {
+            image.setDateEdit(new Date());
+        }
+        update(image);
     }
 
     public void deleteImages() {

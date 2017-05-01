@@ -93,9 +93,7 @@ public class CommentsDaoTests {
     }
 
     @Test
-    public void testComments() {
-        // test create comment
-
+    public void testCreateRetrieveComments() {
         commentsDao.create(comment1);
         int id = comment1.getId();
 
@@ -111,24 +109,55 @@ public class CommentsDaoTests {
 
         List<Comment> comments2 = commentsDao.getAllComments();
         assertEquals("Should be four retrieved comments.", 4, comments2.size());
+    }
 
-        // test edit
-
+        @Test
+        public void testLikeComment() {
+        commentsDao.create(comment1);
+        int id = comment1.getId();
         Comment comment = commentsDao.getComment(id);
 
         int likes = comment.getLikes();
-        int dislikes = comment.getDislikes();
-        String text = comment.getText();
         Date dateEdit = comment.getDateEdit();
 
         comment.setLikes(likes+1);
-        comment.setDislikes(likes+1);
-        comment.setText("New text");
 
         commentsDao.update(comment);
         Comment commentUpdated = commentsDao.getComment(id);
         assertTrue("Likes should have been incremented", likes < commentUpdated.getLikes());
+        assertEquals("Date of edit should have NOT been updated", dateEdit, commentUpdated.getDateEdit());
+    }
+
+    @Test
+    public void testDislikeComment() {
+        commentsDao.create(comment1);
+        int id = comment1.getId();
+        Comment comment = commentsDao.getComment(id);
+
+        int dislikes = comment.getDislikes();
+        Date dateEdit = comment.getDateEdit();
+
+        comment.setDislikes(dislikes+1);
+        commentsDao.update(comment);
+
+        Comment commentUpdated = commentsDao.getComment(id);
         assertTrue("Dislikes should have been incremented", dislikes < commentUpdated.getDislikes());
+        assertEquals("Date of edit should have NOT been updated", dateEdit, commentUpdated.getDateEdit());
+    }
+
+    @Test
+    public void testEditComment() {
+        commentsDao.create(comment1);
+        int id = comment1.getId();
+        Comment comment = commentsDao.getComment(id);
+
+        String text = comment.getText();
+        Date dateEdit = comment.getDateEdit();
+
+        comment.setText("New text");
+
+        commentsDao.update(comment, true);
+        Comment commentUpdated = commentsDao.getComment(id);
         assertTrue("Text of comment should have been changed", text != commentUpdated.getText());
         assertNotEquals("Date of edit should have been updated", dateEdit, commentUpdated.getDateEdit());
     }
