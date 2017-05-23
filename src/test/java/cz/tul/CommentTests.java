@@ -26,7 +26,7 @@ import static org.junit.Assert.assertTrue;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = {Main.class})
+@SpringApplicationConfiguration(classes = {SpringBootWebApplication.class})
 @ActiveProfiles({"test"})
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
