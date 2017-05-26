@@ -1,5 +1,6 @@
 package cz.tul.service;
 
+import com.google.common.collect.Lists;
 import cz.tul.data.Tag;
 import cz.tul.repositories.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class TagService {
     public void create (Tag tag) { tagRepository.save(tag); }
 
     public List<Tag> getAllTags() {
-        return StreamSupport.stream(tagRepository.findAll().spliterator(),false).collect(Collectors.toList());
+        return Lists.newArrayList(tagRepository.findAll());
     }
 
     public Tag getTag(int id) {

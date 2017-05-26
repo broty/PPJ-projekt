@@ -1,5 +1,6 @@
 package cz.tul.service;
 
+import com.google.common.collect.Lists;
 import cz.tul.data.Image;
 import cz.tul.repositories.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class ImageService {
     public void create (Image image) { imageRepository.save(image); }
 
     public List<Image> getAllImages() {
-        return StreamSupport.stream(imageRepository.findAll().spliterator(),false).collect(Collectors.toList());
+        return Lists.newArrayList(imageRepository.findAll());
     }
 
     public Image getImage(int id) {
@@ -39,7 +40,22 @@ public class ImageService {
         update(image);
     }
 
+    public List<Image> getUserImages(int id) {
+        return Lists.newArrayList(imageRepository.findByUserId(id));
+    }
+
     public void deleteImages() {
         imageRepository.deleteAll();
     }
+
+    public List<Image> getImagesByName(String name) {
+        return Lists.newArrayList(imageRepository.findByName(name));
+    }
+
+    public List<Image> getImagesByTag(int id) {
+        return Lists.newArrayList(imageRepository.findByTags(id));
+    }
+
+    public void like (int id) { imageRepository.incrementLikes(id); };
+    public void dislike (int id) { imageRepository.decrementLikes(id); };
 }

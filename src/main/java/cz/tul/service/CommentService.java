@@ -1,5 +1,6 @@
 package cz.tul.service;
 
+import com.google.common.collect.Lists;
 import cz.tul.data.Comment;
 import cz.tul.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class CommentService {
     public void create (Comment comment) { commentRepository.save(comment); }
 
     public List<Comment> getAllComments() {
-        return StreamSupport.stream(commentRepository.findAll().spliterator(),false).collect(Collectors.toList());
+        return Lists.newArrayList(commentRepository.findAll());
     }
 
     public Comment getComment(int id) {
@@ -42,4 +43,7 @@ public class CommentService {
     public void deleteComments() {
         commentRepository.deleteAll();
     }
+
+    public void like (int id) { commentRepository.incrementLikes(id); };
+    public void dislike (int id) { commentRepository.decrementLikes(id); };
 }

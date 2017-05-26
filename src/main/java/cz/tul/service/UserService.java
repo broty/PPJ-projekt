@@ -1,5 +1,6 @@
 package cz.tul.service;
 
+import com.google.common.collect.Lists;
 import cz.tul.data.User;
 import cz.tul.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UserService {
     }
 
     public List<User> getAllUsers() {
-        return StreamSupport.stream(userRepository.findAll().spliterator(),false).collect(Collectors.toList());
+        return Lists.newArrayList(userRepository.findAll());
     }
 
     public void deleteUsers() {userRepository.deleteAll();}
